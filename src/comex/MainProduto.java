@@ -5,6 +5,7 @@ public class MainProduto {
 		Produto produto1 = new Produto();
 		Produto produto2 = new Produto();
 		Produto produto3 = new Produto();
+		ProdutoIsento produto2Isento = new ProdutoIsento();
 	
 		produto1.id = 1;
 		produto1.nome = "Notebook Samsung";
@@ -23,6 +24,13 @@ public class MainProduto {
 		produto3.precoUnitario = 1889.00;
 		produto3.quantidadeEstoque = 3;
 		produto3.categoriaProduto = "Informática";
+		
+		produto2Isento.id = 2;
+		produto2Isento.nome = "Clean Architecture";
+		produto2Isento.precoUnitario = 109.90;
+		produto2Isento.quantidadeEstoque = 2;
+		produto2Isento.categoriaProduto = "Livros";
+		
 		
 		System.out.println("Produto " + produto1.id);
 		System.out.println("ID: " + produto1.id);
@@ -52,6 +60,18 @@ public class MainProduto {
 		System.out.println("Categoria: " + produto3.categoriaProduto);
 		System.out.println("Total de valor incluindo estoque: " + produto3.calculaValorEst());
 		System.out.println("Cálculo de imposto: " + produto3.calculaImposto());
+		
+		
+		// Neste caso faremos o produto 2 utilizar a funcao produto isento
+		System.out.println();
+		System.out.println("Produto " + produto2Isento.id);
+		System.out.println("ID: " + produto2Isento.id);
+		System.out.println("Nome: " + produto2Isento.nome);
+		System.out.println("Preço Unitário: " + produto2Isento.precoUnitario);
+		System.out.println("Quantidade em estoque: " + produto2Isento.quantidadeEstoque);
+		System.out.println("Categoria: " + produto2Isento.categoriaProduto);
+		System.out.println("Total de valor incluindo estoque: " + produto2Isento.calculaValorEst());
+		System.out.println("Cálculo de imposto: " + produto2Isento.calculaImpostoIsento());
 
 	}
 }
