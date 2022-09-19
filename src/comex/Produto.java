@@ -10,30 +10,30 @@ public class Produto {
 
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 	public String getDescricao() {
-		return descricao;
+		return this.descricao;
 	}
 	
 	public double getPrecoUni() {
-		return precoUnitario;
+		return this.precoUnitario;
 	}
 	
 	public int getQuantidadeEst() {
-		return quantidadeEstoque;
+		return this.quantidadeEstoque;
 	}
 	
 	public String getCategoriaProd() {
-		return categoriaProduto;
+		return this.categoriaProduto;
 	}
 	
 	public double calculaValorEst() {
-		return quantidadeEstoque * precoUnitario;
+		return this.quantidadeEstoque * this.precoUnitario;
 	}
 	
 	public double calculaImposto() {
-		return precoUnitario * 0.4;
+		return this.precoUnitario * 0.4;
 	}
 }

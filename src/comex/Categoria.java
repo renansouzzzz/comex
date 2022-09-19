@@ -16,7 +16,7 @@ public class Categoria {
 	}
 
 	public String setStatus() {
-		if(status) {
+		if(this.status) {
 			aux = "Ativa";
 		}
 		else {
