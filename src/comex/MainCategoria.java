@@ -20,12 +20,12 @@ public class MainCategoria {
 		
 		
 		System.out.println("Categoria " + categoria1.nome + 
-				" (" + categoria1.id + " - " + categoria1.getStatus() + ")");
+				" (" + categoria1.id + " - " + categoria1.setStatus() + ")");
 		
 		System.out.println("Categoria " + categoria2.nome + 
-				" (" + categoria2.id + " - " + categoria2.getStatus() + ")");
+				" (" + categoria2.id + " - " + categoria2.setStatus() + ")");
 		
 		System.out.println("Categoria " + categoria3.nome + 
-				" (" + categoria3.id + " - " + categoria3.getStatus() + ")");
+				" (" + categoria3.id + " - " + categoria3.setStatus() + ")");
 	}
 }

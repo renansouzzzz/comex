@@ -15,7 +15,7 @@ public class Categoria {
 		return this.nome;
 	}
 
-	public String getStatus() {
+	public String setStatus() {
 		if(status) {
 			aux = "Ativa";
 		}
