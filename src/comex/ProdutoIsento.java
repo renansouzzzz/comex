@@ -13,6 +13,9 @@ public class ProdutoIsento {
 		return this.id;
 	}
 
+	public String getNome() {
+		return this.nome;
+	}
 	public String getDescricao() {
 		return this.descricao;
 	}

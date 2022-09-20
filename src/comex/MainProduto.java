@@ -32,44 +32,44 @@ public class MainProduto {
 		produto2Isento.categoriaProduto = "Livros";
 		
 		
-		System.out.println("Produto " + produto1.id);
-		System.out.println("ID: " + produto1.id);
-		System.out.println("Nome: " + produto1.nome);
-		System.out.println("Preço Unitário: " + produto1.precoUnitario);
-		System.out.println("Quantidade em estoque: " + produto1.quantidadeEstoque);
-		System.out.println("Categoria: " + produto1.categoriaProduto);
+		System.out.println("Produto " + produto1.getId());
+		System.out.println("ID: " + produto1.getId());
+		System.out.println("Nome: " + produto1.getNome());
+		System.out.println("Preço Unitário: " + produto1.getPrecoUni());
+		System.out.println("Quantidade em estoque: " + produto1.getQuantidadeEst());
+		System.out.println("Categoria: " + produto1.getCategoriaProd());
 		System.out.println("Total de valor incluindo estoque: " + produto1.calculaValorEst());
 		System.out.println("Cálculo de imposto: " + produto1.calculaImposto());
 		
 		System.out.println();
-		System.out.println("Produto " + produto2.id);
-		System.out.println("ID: " + produto2.id);
-		System.out.println("Nome: " + produto2.nome);
-		System.out.println("Preço Unitário: " + produto2.precoUnitario);
-		System.out.println("Quantidade em estoque: " + produto2.quantidadeEstoque);
-		System.out.println("Categoria: " + produto2.categoriaProduto);
+		System.out.println("Produto " + produto2.getId());
+		System.out.println("ID: " + produto2.getId());
+		System.out.println("Nome: " + produto2.getNome());
+		System.out.println("Preço Unitário: " + produto2.getPrecoUni());
+		System.out.println("Quantidade em estoque: " + produto2.getQuantidadeEst());
+		System.out.println("Categoria: " + produto2.getCategoriaProd());
 		System.out.println("Total de valor incluindo estoque: " + produto2.calculaValorEst());
 		System.out.println("Cálculo de imposto: " + produto2.calculaImposto());
 		
 		System.out.println();
-		System.out.println("Produto " + produto3.id);
-		System.out.println("ID: " + produto3.id);
-		System.out.println("Nome: " + produto3.nome);
-		System.out.println("Preço Unitário: " + produto3.precoUnitario);
-		System.out.println("Quantidade em estoque: " + produto3.quantidadeEstoque);
-		System.out.println("Categoria: " + produto3.categoriaProduto);
+		System.out.println("Produto " + produto3.getId());
+		System.out.println("ID: " + produto3.getId());
+		System.out.println("Nome: " + produto3.getNome());
+		System.out.println("Preço Unitário: " + produto3.getPrecoUni());
+		System.out.println("Quantidade em estoque: " + produto3.getQuantidadeEst());
+		System.out.println("Categoria: " + produto3.getCategoriaProd());
 		System.out.println("Total de valor incluindo estoque: " + produto3.calculaValorEst());
 		System.out.println("Cálculo de imposto: " + produto3.calculaImposto());
 		
 		
 		// Neste caso faremos o produto 2 utilizar a funcao produto isento
 		System.out.println();
-		System.out.println("Produto " + produto2Isento.id);
-		System.out.println("ID: " + produto2Isento.id);
-		System.out.println("Nome: " + produto2Isento.nome);
-		System.out.println("Preço Unitário: " + produto2Isento.precoUnitario);
-		System.out.println("Quantidade em estoque: " + produto2Isento.quantidadeEstoque);
-		System.out.println("Categoria: " + produto2Isento.categoriaProduto);
+		System.out.println("Produto " + produto2Isento.getId());
+		System.out.println("ID: " + produto2Isento.getId());
+		System.out.println("Nome: " + produto2Isento.getNome());
+		System.out.println("Preço Unitário: " + produto2Isento.getPrecoUni());
+		System.out.println("Quantidade em estoque: " + produto2Isento.getQuantidadeEst());
+		System.out.println("Categoria: " + produto2Isento.getCategoriaProd());
 		System.out.println("Total de valor incluindo estoque: " + produto2Isento.calculaValorEst());
 		System.out.println("Cálculo de imposto: " + produto2Isento.calculaImpostoIsento());
 
