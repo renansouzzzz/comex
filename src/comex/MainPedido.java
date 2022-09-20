@@ -11,7 +11,7 @@ public class MainPedido {
 		Pedido pedido3 = new Pedido(3, "19/09/2022", new Cliente(3, "Gabi", "444.444.444-44", "(44)4444-4444", "Avenida Silveira", 108, "Prédio 3", 
 				"Gaslheu", "Pouso Alegre", "MG"));
 		
-		Pedido pedido4 = new Pedido(4, "13/09/2022", new Cliente(3, "Marcelo", "555.555.555-55", "(44)4444-4444", "Avenida Silveira", 108, "Prédio 3", 
+		Pedido pedido4 = new Pedido(4, "13/09/2022", new Cliente(3, "Marcelo", "555.555.555-55", "(44)4444-4444", "Rodovia Dutra", 56, "Casa", 
 				"Machel", "Porto", "Portugal"));
 		
 		System.out.println("Pedido " + pedido1.id + ":");
