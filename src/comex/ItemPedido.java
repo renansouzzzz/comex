@@ -7,7 +7,7 @@ public class ItemPedido {
 	ProdutoConstructor produto;
 	Pedido pedido;
 	double desconto;
-	int tipoDesconto;
+	int tipoDesconto = 0;
 	
 	public ItemPedido(int id, double precoUnitario, int quantidadeComprada, ProdutoConstructor produto, Pedido pedido,
 			double desconto, int tipoDesconto){
@@ -17,7 +17,7 @@ public class ItemPedido {
 		this.produto = produto;
 		this.pedido = pedido;
 		this.desconto = desconto;
-		this.tipoDesconto = 0;
+		this.tipoDesconto = tipoDesconto;
 	}
 	
 	public int getId() {
