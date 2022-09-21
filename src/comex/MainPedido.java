@@ -1,6 +1,6 @@
 package comex;
 
-public class MainPedido {
+public class MainPedido{
 	public static void main(String[] args) {
 		Pedido pedido1 = new Pedido(1, "15/09/2022", new Cliente(1, "Ana", "333.333.333-33", "(22)2222-1222", "Rua Souza Aparecida", 44, "Apartamento", 
 				"Jd. Mourisco", "Ubatuba", "SP"));

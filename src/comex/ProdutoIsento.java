@@ -1,7 +1,7 @@
 package comex;
 
 public class ProdutoIsento {
-	int id;
+	int id = 0;
 	String nome;
 	String descricao;
 	double precoUnitario;

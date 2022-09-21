@@ -2,10 +2,12 @@ package comex;
 
 public class MainCategoria {
 	public static void main(String[] args) {
-		Categoria categoria1 = new Categoria();
-		Categoria categoria2 = new Categoria();
-		Categoria categoria3 = new Categoria();
+		Categoria categoria1 = new Categoria("INFORMÁTICA", true);
+		Categoria categoria2 = new Categoria("MÓVEIS", false);
+		Categoria categoria3 = new Categoria("LIVROS", true);
 		
+		
+		// Primeiro método, sem utilizar o auto-increment do ID
 		categoria1.id = 1;
 		categoria1.nome = "INFORMÁTICA";
 		categoria1.status = true;

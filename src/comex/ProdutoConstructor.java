@@ -1,7 +1,7 @@
 package comex;
 
 public class ProdutoConstructor {
-	int id;
+	int id = 0;
 	String nome;
 	String descricao;
 	double precoUnitario;
@@ -15,6 +15,7 @@ public class ProdutoConstructor {
 		this.precoUnitario = precoUnitario;
 		this.quantidadeEstoque = quantidadeEstoque;
 		this.categoriaProduto = categoriaProduto;
+		id++;
 		}
 
 

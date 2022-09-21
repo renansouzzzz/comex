@@ -1,7 +1,7 @@
 package comex;
 
 public class ItemPedido {
-	int id;
+	int id = 0;
 	double precoUnitario;
 	int quantidadeComprada;
 	ProdutoConstructor produto;
@@ -9,8 +9,11 @@ public class ItemPedido {
 	double desconto;
 	int tipoDesconto = 0;
 	
+	// Cada vez que for chamado o construtor o ID incrementará + 1
+	
 	public ItemPedido(int id, double precoUnitario, int quantidadeComprada, ProdutoConstructor produto, Pedido pedido,
 			double desconto, int tipoDesconto){
+		super();
 		this.id = id;
 		this.precoUnitario = precoUnitario;
 		this.quantidadeComprada = quantidadeComprada;
@@ -18,6 +21,7 @@ public class ItemPedido {
 		this.pedido = pedido;
 		this.desconto = desconto;
 		this.tipoDesconto = tipoDesconto;
+		id++;
 	}
 	
 	public int getId() {
