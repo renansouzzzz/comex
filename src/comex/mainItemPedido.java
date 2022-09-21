@@ -20,10 +20,10 @@ public class mainItemPedido {
 		ProdutoConstructor produto4 = new ProdutoConstructor(4, "Violão 6 acordes", 670.00, 1, "Instrumento");
 		
 		
-		ItemPedido itemPedido1 = new ItemPedido(1, 170.00, 2, produto1, pedido1, 0.10, "Promoção");
-		ItemPedido itemPedido2 = new ItemPedido(2, 1760.00, 5, produto2, pedido2, 0, "Nenhum");
-		ItemPedido itemPedido3 = new ItemPedido(3, 260.00, 3, produto3, pedido3, 0.05, "Promoção");
-		ItemPedido itemPedido4 = new ItemPedido(4, 670.00, 11, produto4, pedido4, 0.20, "Quantidade");
+		ItemPedido itemPedido1 = new ItemPedido(1, 170.00, 2, produto1, pedido1, 0.10, 1);
+		ItemPedido itemPedido2 = new ItemPedido(2, 1760.00, 5, produto2, pedido2, 0, 0);
+		ItemPedido itemPedido3 = new ItemPedido(3, 260.00, 3, produto3, pedido3, 0.05, 1);
+		ItemPedido itemPedido4 = new ItemPedido(4, 670.00, 11, produto4, pedido4, 0.20, 2);
 		
 		System.out.println("Item do pedido " + itemPedido1.getId() + ":");
 		System.out.println("Quantidade de itens: " + itemPedido1.getQuantidadeComprada());

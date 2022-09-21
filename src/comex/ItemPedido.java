@@ -7,18 +7,17 @@ public class ItemPedido {
 	ProdutoConstructor produto;
 	Pedido pedido;
 	double desconto;
-	String tipoDesconto;
+	int tipoDesconto;
 	
 	public ItemPedido(int id, double precoUnitario, int quantidadeComprada, ProdutoConstructor produto, Pedido pedido,
-			double desconto, String tipoDesconto){
+			double desconto, int tipoDesconto){
 		this.id = id;
 		this.precoUnitario = precoUnitario;
 		this.quantidadeComprada = quantidadeComprada;
 		this.produto = produto;
 		this.pedido = pedido;
 		this.desconto = desconto;
-		this.tipoDesconto = tipoDesconto;
-		
+		this.tipoDesconto = 0;
 	}
 	
 	public int getId() {
@@ -45,7 +44,7 @@ public class ItemPedido {
 		return this.desconto;
 	}
 	
-	public String getTipoDesconto() {
+	public int getTipoDesconto() {
 		return this.tipoDesconto;
 	}
 	
@@ -53,19 +52,22 @@ public class ItemPedido {
 		return this.precoUnitario * this.quantidadeComprada;
 	}
 	
+	
+	// quantidade = 0; promocao = 1; nenhum = 2;
+	
 	public double calculaDesconto() {
-		if (this.tipoDesconto == "Nenhum") {
-			return this.precoUnitario * this.quantidadeComprada;
+		if (this.tipoDesconto == 0) {
+				return this.precoUnitario * this.quantidadeComprada;
 		}
-		else if (this.tipoDesconto == "Promoção"){
+		else if (this.tipoDesconto == 1){
 			double somaPromo;
 			somaPromo = this.precoUnitario * this.quantidadeComprada * 0.20;
-			return this.precoUnitario * this.quantidadeComprada - somaPromo;
+				return this.precoUnitario * this.quantidadeComprada - somaPromo;
 		}
 		else if (this.quantidadeComprada > 10) {
 			double somaItens;
 			somaItens = this.precoUnitario * this.quantidadeComprada * 0.10;
-			return this.precoUnitario * this.quantidadeComprada - somaItens;
+				return this.precoUnitario * this.quantidadeComprada - somaItens;
 		}
 		return 0;
 	}
