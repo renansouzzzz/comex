@@ -12,16 +12,14 @@ public class ItemPedido {
 	// Cada vez que for chamado o construtor o ID incrementará + 1
 	
 	public ItemPedido(int id, double precoUnitario, int quantidadeComprada, ProdutoConstructor produto, Pedido pedido,
-			double desconto, int tipoDesconto){
-		super();
-		this.id = id;
+			double desconto, int tipoDesconto) {
+		this.id = id++;
 		this.precoUnitario = precoUnitario;
 		this.quantidadeComprada = quantidadeComprada;
 		this.produto = produto;
 		this.pedido = pedido;
 		this.desconto = desconto;
 		this.tipoDesconto = tipoDesconto;
-		id++;
 	}
 	
 	public int getId() {

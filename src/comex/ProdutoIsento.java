@@ -1,6 +1,6 @@
 package comex;
 
-public class ProdutoIsento {
+public class ProdutoIsento extends Produto{
 	int id = 0;
 	String nome;
 	String descricao;
