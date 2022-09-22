@@ -12,7 +12,7 @@ public class MainCalculadoraValorTotal {
 				"Gaslheu", "Pouso Alegre", "MG"));
 		
 		Pedido pedido4 = new Pedido(4, "13/09/2022", new Cliente(3, "Marcelo", "555.555.555-55", "(44)4444-4444", "Rodovia Dutra", 56, "Casa", 
-				"Machel", "Porto", "Portugal"));
+				"Machel", "Porto", "GO"));
 		
 		ProdutoConstructor produto1 = new ProdutoConstructor(1, "Óculos de Sol", 170.00, 4, "Acessório");
 		ProdutoConstructor produto2 = new ProdutoConstructor(2, "Monitor 144hz", 1760.00, 7, "Tecnologia");
@@ -20,10 +20,10 @@ public class MainCalculadoraValorTotal {
 		ProdutoConstructor produto4 = new ProdutoConstructor(4, "Violão 6 acordes", 670.00, 1, "Instrumento");
 		
 		
-		ItemPedido itemPedido1 = new ItemPedido(1, 170.00, 2, produto1, pedido1, 0.10, 1);
+		ItemPedido itemPedido1 = new ItemPedido(1, 170.00, 2, produto1, pedido1, 0, 0);
 		ItemPedido itemPedido2 = new ItemPedido(2, 1760.00, 5, produto2, pedido2, 0, 0);
-		ItemPedido itemPedido3 = new ItemPedido(3, 260.00, 3, produto3, pedido3, 0.05, 1);
-		ItemPedido itemPedido4 = new ItemPedido(4, 670.00, 11, produto4, pedido4, 0.20, 2);
+		ItemPedido itemPedido3 = new ItemPedido(3, 260.00, 3, produto3, pedido3, 0, 0);
+		ItemPedido itemPedido4 = new ItemPedido(4, 670.00, 11, produto4, pedido4, 0, 0);
 		
 		
 		System.out.println("Item do pedido " + itemPedido1.getId() + ":");

@@ -55,7 +55,7 @@ public class ItemPedido {
 	}
 	
 	
-	// quantidade = 0; promocao = 1; nenhum = 2;
+	// nenhum = 0; promocao = 1;
 	
 	public double calculaDesconto() {
 		if (this.tipoDesconto == 0) {

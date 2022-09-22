@@ -12,7 +12,7 @@ public class MainItemPedido {
 				"Gaslheu", "Pouso Alegre", "MG"));
 		
 		Pedido pedido4 = new Pedido(4, "13/09/2022", new Cliente(3, "Marcelo", "555.555.555-55", "(44)4444-4444", "Rodovia Dutra", 56, "Casa", 
-				"Machel", "Porto", "Portugal"));
+				"Machel", "Porto", "GO"));
 		
 		ProdutoConstructor produto1 = new ProdutoConstructor(1, "Óculos de Sol", 170.00, 4, "Acessório");
 		ProdutoConstructor produto2 = new ProdutoConstructor(2, "Monitor 144hz", 1760.00, 7, "Tecnologia");
