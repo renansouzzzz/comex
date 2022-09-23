@@ -1,18 +1,21 @@
 package comex;
 
-public class Categoria {
-	int id = 0;
+import java.util.concurrent.atomic.AtomicInteger;
+
+class Categoria {
+	private static AtomicInteger count = new AtomicInteger(0);
+	int id;
 	String nome;
 	boolean status;
 	String aux;
 
 	// Cada vez que o construtor for chamado, id++ será rodado.
 	public Categoria(String nome, boolean status) {
+		this.id = count.incrementAndGet();
 		this.nome = nome;
 		this.status = status;
-		this.id = id++;
 	}
-
+	
 	public int getId() {
 		return this.id;
 	}

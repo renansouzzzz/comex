@@ -71,7 +71,7 @@ public class MainProduto {
 		System.out.println("Quantidade em estoque: " + produto2Isento.getQuantidadeEst());
 		System.out.println("Categoria: " + produto2Isento.getCategoriaProd());
 		System.out.println("Total de valor incluindo estoque: " + produto2Isento.calculaValorEst());
-		System.out.println("Cálculo de imposto: " + produto2Isento.calculaImpostoIsento());
+		System.out.println("Cálculo de imposto: " + produto2Isento.calculaImposto());
 
 	}
 }

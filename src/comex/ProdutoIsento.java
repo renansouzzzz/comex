@@ -1,13 +1,13 @@
 package comex;
 
-public class ProdutoIsento extends Produto{
-	int id = 0;
+
+public class ProdutoIsento extends Produto {
+	int id;
 	String nome;
 	String descricao;
 	double precoUnitario;
 	int quantidadeEstoque;
 	String categoriaProduto;
-
 
 	public int getId() {
 		return this.id;
@@ -36,7 +36,7 @@ public class ProdutoIsento extends Produto{
 		return this.quantidadeEstoque * this.precoUnitario;
 	}
 	
-	public double calculaImpostoIsento() {
+	public double calculaImpostoIsento(Produto precoUnitario) {
 		return 0;
 	}
 }

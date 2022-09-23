@@ -1,7 +1,10 @@
 package comex;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class ItemPedido {
-	int id = 0;
+	private static AtomicInteger count = new AtomicInteger(0);
+	private int id;
 	double precoUnitario;
 	int quantidadeComprada;
 	ProdutoConstructor produto;
@@ -13,7 +16,7 @@ public class ItemPedido {
 	
 	public ItemPedido(int id, double precoUnitario, int quantidadeComprada, ProdutoConstructor produto, Pedido pedido,
 			double desconto, int tipoDesconto) {
-		this.id = id++;
+		this.id = count.incrementAndGet();
 		this.precoUnitario = precoUnitario;
 		this.quantidadeComprada = quantidadeComprada;
 		this.produto = produto;

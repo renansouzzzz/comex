@@ -1,5 +1,6 @@
 package comex;
 
+
 public class Produto {
 	int id;
 	String nome;
@@ -7,7 +8,6 @@ public class Produto {
 	double precoUnitario;
 	int quantidadeEstoque;
 	String categoriaProduto;
-
 
 	public int getId() {
 		return this.id;

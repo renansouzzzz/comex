@@ -8,8 +8,11 @@ public class CalculadoraValorTotal extends ItemPedido {
 		super(id, precoUnitario, quantidadeComprada, produto, pedido, desconto, tipoDesconto);
 	}
 
-	@Override
-	public double calculaDesconto() {
-		return super.calculaDesconto();
+	public void totalValor() {
+		total = this.precoUnitario * this.quantidadeComprada;
+	}
+	
+	public double calcula(ProdutoConstructor ProdutoConstructor) {
+		return this.total;
 	}
 }

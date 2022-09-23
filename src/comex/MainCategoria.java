@@ -7,27 +7,13 @@ public class MainCategoria {
 		Categoria categoria3 = new Categoria("LIVROS", true);
 		
 		
-		// Primeiro método, sem utilizar o auto-increment do ID
-		categoria1.id = 1;
-		categoria1.nome = "INFORMÁTICA";
-		categoria1.status = true;
+		System.out.println("Categoria " + categoria1.getNome() + 
+				" (" + categoria1.getId() + " - " + categoria1.getNome() + ")");
 		
-		categoria2.id = 2;
-		categoria2.nome = "MÓVEIS";
-		categoria2.status = false;
+		System.out.println("Categoria " + categoria2.getNome() + 
+				" (" + categoria2.getId() + " - " + categoria2.setStatus() + ")");
 		
-		categoria3.id = 3;
-		categoria3.nome = "LIVROS";
-		categoria3.status = true;
-		
-		
-		System.out.println("Categoria " + categoria1.nome + 
-				" (" + categoria1.id + " - " + categoria1.setStatus() + ")");
-		
-		System.out.println("Categoria " + categoria2.nome + 
-				" (" + categoria2.id + " - " + categoria2.setStatus() + ")");
-		
-		System.out.println("Categoria " + categoria3.nome + 
-				" (" + categoria3.id + " - " + categoria3.setStatus() + ")");
+		System.out.println("Categoria " + categoria3.getNome() + 
+				" (" + categoria3.getId() + " - " + categoria3.setStatus() + ")");
 	}
 }
