@@ -7,6 +7,7 @@ public class MainProduto {
 		Produto produto3 = new Produto();
 		ProdutoIsento produto2Isento = new ProdutoIsento();
 	
+		/*
 		produto1.id = 1;
 		produto1.nome = "Notebook Samsung";
 		produto1.precoUnitario = 3523.00;
@@ -30,7 +31,7 @@ public class MainProduto {
 		produto2Isento.precoUnitario = 109.90;
 		produto2Isento.quantidadeEstoque = 2;
 		produto2Isento.categoriaProduto = "Livros";
-		
+		*/
 		
 		System.out.println("Produto " + produto1.getId());
 		System.out.println("ID: " + produto1.getId());

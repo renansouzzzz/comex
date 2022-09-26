@@ -4,10 +4,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 class Categoria {
 	private static AtomicInteger count = new AtomicInteger(0);
-	int id;
-	String nome;
-	boolean status;
-	String aux;
+	private int id;
+	private String nome;
+	private boolean status;
+	private String aux;
 
 	// Cada vez que o construtor for chamado, id++ será rodado.
 	public Categoria(String nome, boolean status) {
