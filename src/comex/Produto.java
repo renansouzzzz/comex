@@ -2,12 +2,12 @@ package comex;
 
 
 public class Produto {
-	int id;
-	String nome;
-	String descricao;
-	double precoUnitario;
-	int quantidadeEstoque;
-	String categoriaProduto;
+	private int id;
+	private String nome;
+	private String descricao;
+	private double precoUnitario;
+	private int quantidadeEstoque;
+	private String categoriaProduto;
 
 	public int getId() {
 		return this.id;

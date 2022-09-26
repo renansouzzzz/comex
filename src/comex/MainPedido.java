@@ -14,23 +14,23 @@ public class MainPedido{
 		Pedido pedido4 = new Pedido(4, "13/09/2022", new Cliente(3, "Marcelo", "555.555.555-55", "(44)4444-4444", "Rodovia Dutra", 56, "Casa", 
 				"Machel", "Porto", "GO"));
 		
-		System.out.println("Pedido " + pedido1.id + ":");
-		System.out.println("Data: " + pedido1.data);
+		System.out.println("Pedido " + pedido1.getId() + ":");
+		System.out.println("Data: " + pedido1.getData());
 		System.out.println("Cliente: " + pedido1.cliente.getNome());
 		
 		System.out.println("");
-		System.out.println("Pedido " + pedido2.id + ":");
-		System.out.println("Data: " + pedido2.data);
+		System.out.println("Pedido " + pedido2.getId() + ":");
+		System.out.println("Data: " + pedido2.getData());
 		System.out.println("Cliente: " + pedido2.cliente.getNome());
 		
 		System.out.println("");
-		System.out.println("Pedido " + pedido3.id + ":");
-		System.out.println("Data: " + pedido3.data);
+		System.out.println("Pedido " + pedido3.getId() + ":");
+		System.out.println("Data: " + pedido3.getData());
 		System.out.println("Cliente: " + pedido3.cliente.getNome());
 		
 		System.out.println("");
-		System.out.println("Pedido " + pedido4.id + ":");
-		System.out.println("Data: " + pedido4.data);
+		System.out.println("Pedido " + pedido4.getId() + ":");
+		System.out.println("Data: " + pedido4.getData());
 		System.out.println("Cliente: " + pedido4.cliente.getNome());
 	}
 }

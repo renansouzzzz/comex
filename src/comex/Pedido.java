@@ -4,8 +4,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Pedido {
 	private static AtomicInteger count = new AtomicInteger(0);
-	int id;
-	String data;
+	private int id;
+	private String data;
 	Cliente cliente;
 
 	public Pedido(int id, String data, Cliente cliente){

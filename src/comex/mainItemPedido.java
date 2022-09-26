@@ -27,7 +27,7 @@ public class MainItemPedido {
 		
 		System.out.println("Item do pedido " + itemPedido1.getId() + ":");
 		System.out.println("Quantidade de itens: " + itemPedido1.getQuantidadeComprada());
-		System.out.println("Produto: " + produto1.nome);
+		System.out.println("Produto: " + produto1.getNome());
 		System.out.println("Desconto: " + itemPedido1.getDesconto());
 		System.out.println("Tipo do desconto: " + itemPedido1.getTipoDesconto());
 		System.out.println("Preço total sem descontos: " + itemPedido1.precoSemDesconto());
@@ -37,7 +37,7 @@ public class MainItemPedido {
 		System.out.println("");
 		System.out.println("Item do pedido " + itemPedido2.getId() + ":");
 		System.out.println("Quantidade de itens: " + itemPedido2.getQuantidadeComprada());
-		System.out.println("Produto: " + produto2.nome);
+		System.out.println("Produto: " + produto2.getNome());
 		System.out.println("Desconto: " + itemPedido2.getDesconto());
 		System.out.println("Tipo do desconto: " + itemPedido2.getTipoDesconto());
 		System.out.println("Preço total sem descontos: " + itemPedido2.precoSemDesconto());
@@ -47,7 +47,7 @@ public class MainItemPedido {
 		System.out.println("");
 		System.out.println("Item do pedido " + itemPedido3.getId() + ":");
 		System.out.println("Quantidade de itens: " + itemPedido3.getQuantidadeComprada());
-		System.out.println("Produto: " + produto3.nome);
+		System.out.println("Produto: " + produto3.getNome());
 		System.out.println("Desconto: " + itemPedido3.getDesconto());
 		System.out.println("Tipo do desconto: " + itemPedido3.getTipoDesconto());
 		System.out.println("Preço total sem descontos: " + itemPedido3.precoSemDesconto());
@@ -57,7 +57,7 @@ public class MainItemPedido {
 		System.out.println("");
 		System.out.println("Item do pedido " + itemPedido4.getId() + ":");
 		System.out.println("Quantidade de itens: " + itemPedido4.getQuantidadeComprada());
-		System.out.println("Produto: " + produto4.nome);
+		System.out.println("Produto: " + produto4.getNome());
 		System.out.println("Desconto: " + itemPedido4.getDesconto());
 		System.out.println("Tipo do desconto: " + itemPedido4.getTipoDesconto());
 		System.out.println("Preço total sem descontos: " + itemPedido4.precoSemDesconto());
