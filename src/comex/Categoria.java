@@ -13,8 +13,8 @@ class Categoria {
 	
 	
 	public Categoria(String nome, boolean status) {
-		if (id <= 0) throw ex;
-		if (nome.length() < 3) throw ex;
+		if (this.id <= 0) throw ex;
+		if (this.nome.length() < 3) throw ex;
 		if (aux != "Ativa" | aux != "Inativa") throw ex;
 		this.id = count.incrementAndGet();
 		this.nome = nome;

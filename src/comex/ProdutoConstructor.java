@@ -11,8 +11,15 @@ public class ProdutoConstructor {
 	private int quantidadeEstoque;
 	private String categoriaProduto;
 
-		
+	//IllegalArgumentException ex = new IllegalArgumentException();
+	
 	public ProdutoConstructor(String nome, double precoUnitario, int quantidadeEstoque, String categoriaProduto) {
+		if (id <= 0) throw new ArithmeticException();
+		if (nome.length() <= 5) throw new ArithmeticException();
+		if (precoUnitario <= 0) throw new ArithmeticException();
+		if (quantidadeEstoque <= 0) throw new ArithmeticException();
+		if (categoriaProduto == null) throw new ArithmeticException();
+		
 		this.id = count.incrementAndGet();
 		this.nome = nome;
 		this.precoUnitario = precoUnitario;
