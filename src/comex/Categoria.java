@@ -7,15 +7,20 @@ class Categoria {
 	private int id;
 	private String nome;
 	private boolean status;
-	private String aux;
+	String aux;
 
-	// Cada vez que o construtor for chamado, id++ será rodado.
+	IllegalArgumentException ex = new IllegalArgumentException();
+	
+	
 	public Categoria(String nome, boolean status) {
+		if (id <= 0) throw ex;
+		if (nome.length() < 3) throw ex;
+		if (aux != "Ativa" | aux != "Inativa") throw ex;
 		this.id = count.incrementAndGet();
 		this.nome = nome;
 		this.status = status;
 	}
-	
+		
 	public int getId() {
 		return this.id;
 	}
@@ -24,9 +29,13 @@ class Categoria {
 		return this.nome;
 	}
 
+	
+	// como a variável aux está em execução, alterei neste set! {Ativa para Ativ, forçando
+	//   o erro}
+	
 	public String setStatus() {
 		if (this.status) {
-			aux = "Ativa";
+			aux = "Ativ";
 		} else {
 			aux = "Inativa";
 		}
