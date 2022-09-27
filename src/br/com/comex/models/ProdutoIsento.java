@@ -5,17 +5,15 @@ public class ProdutoIsento extends Produto {
 	
 	public ProdutoIsento(int id, String nome, String descricao, double precoUnitario, int quantidadeEstoque,
 			String categoriaProduto) {
-		super(id, nome, descricao, precoUnitario, quantidadeEstoque, categoriaProduto);
-		
+		super(id, nome, descricao, precoUnitario, quantidadeEstoque, categoriaProduto);	
 	}
-
+	
 	int id;
 	String nome;
 	String descricao;
 	double precoUnitario;
 	int quantidadeEstoque;
 	String categoriaProduto;	
-	
 	
 	public int getId() {
 		return id;

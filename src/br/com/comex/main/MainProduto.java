@@ -9,7 +9,7 @@ public class MainProduto {
 				, 6, "Informática");
 		
 		// produto com problema
-		ProdutoIsento produto2Isento = new ProdutoIsento(0, "Not", "Des", 3523
+		ProdutoIsento produto2Isento = new ProdutoIsento(0, "Not", "Des3", 3523
 				, 6, "Informática");
 	
 		
