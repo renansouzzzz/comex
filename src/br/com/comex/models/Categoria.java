@@ -6,21 +6,19 @@ public class Categoria {
 	private static AtomicInteger count = new AtomicInteger(0);
 	private int id;
 	private String nome;
-	String aux;
-	statusCat status;
-
-	IllegalArgumentException ex = new IllegalArgumentException();
+	statusE status;	
 	
-	
-	public Categoria(String nome, statusCat status) {
+	public Categoria(String nome, statusE status) {
+		if (id <= 0 | nome.length() < 3 |
+				this.status != statusE.ATIVA |
+				this.status != statusE.INATIVA) throw new IllegalArgumentException();
 		this.id = count.incrementAndGet();
 		this.nome = nome;
+		this.status = status;
 	}
 	
 	public Categoria(Categoria cat) {
-		if (id <= 0 | nome.length() < 3 |
-				cat.status != statusCat.ATIVA |
-				cat.status != statusCat.INATIVA) throw ex;
+		
 	}
 		
 	public int getId() {
@@ -31,12 +29,11 @@ public class Categoria {
 		return this.nome;
 	}
 	
-	public enum statusCat {
+	public static enum statusE {
 		ATIVA, INATIVA;
 	}
 	
-	public statusCat getStatus() {
+	public statusE getStatus() {
 		return status;
 	}
-
 }

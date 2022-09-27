@@ -1,15 +1,16 @@
 package br.com.comex.main;
 
 import br.com.comex.models.Categoria;
-import br.com.comex.models.Categoria.statusCat;
+import br.com.comex.models.Categoria.statusE;
+
 
 public class MainCategoria {
 	public static void main(String[] args) {
 		
 		// testando valores inválidos e válidos
-		Categoria categoria1 = new Categoria("IN", statusCat.ATIVA);
-		Categoria categoria2 = new Categoria("MÓVEIS", statusCat.INATIVA);
-		Categoria categoria3 = new Categoria("LIVROS", statusCat.ATIVA);
+		Categoria categoria1 = new Categoria("IN", statusE.ATIVA);
+		Categoria categoria2 = new Categoria("MÓVEIS", statusE.INATIVA);
+		Categoria categoria3 = new Categoria("LIVROS", statusE.ATIVA);
 
 		
 		System.out.println("Categoria " + categoria1.getNome() + 
