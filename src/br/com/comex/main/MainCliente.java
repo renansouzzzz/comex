@@ -1,17 +1,18 @@
 package br.com.comex.main;
 
 import br.com.comex.models.Cliente;
+import br.com.comex.models.Cliente.Estado;
 
 public class MainCliente {
 	public static void main(String[] args) {
 	Cliente Ana = new Cliente("Ana Paula", "333.333.333-33", "(22)2222-1222", "Rua Souza Aparecida", "44", "Apartamento", 
-			"Jd. Mourisco", "Ubatuba", "SP");
+			"Jd. Mourisco", "Ubatuba", Estado.AM);
 	
 	Cliente Eli = new Cliente("Eli José", "222.222.222-22", "(11)1111-1111", "Rua Barbosa Silva", "23", "Casa", 
-			"Vila Araújo", "São José", "SP");
+			"Vila Araújo", "São José", Estado.SP);
 	
 	Cliente Gabi = new Cliente("Gabi Moura", "444.444.444-44", "(44)4444-4444", "Avenida Silveira", "108", "Prédio 3", 
-			"Gaslheu", "Pouso Alegre", "MG");
+			"Gaslheu", "Pouso Alegre", Estado.MG);
 	
 	
 	System.out.println("-----------------------------");

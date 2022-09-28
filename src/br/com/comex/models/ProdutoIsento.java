@@ -45,5 +45,10 @@ public class ProdutoIsento extends Produto {
 	public double calculaImpostoIsento(Produto precoUnitario) {
 		return 0;
 	}
+	
+	@Override
+	public String toString() {
+		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
+	}
 }
 

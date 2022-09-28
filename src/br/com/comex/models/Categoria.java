@@ -35,4 +35,9 @@ public class Categoria {
 	public statusE getStatus() {
 		return status;
 	}
+	
+	@Override
+	public String toString() {
+		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
+	}
 }

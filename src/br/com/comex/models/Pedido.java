@@ -25,5 +25,10 @@ public class Pedido {
 	public Cliente getCliente() {
 		return cliente;
 	}
+	
+	@Override
+	public String toString() {
+		return "Principais informações -> ID: " + getId() + " Data: " + getData();
+	}
 
 }

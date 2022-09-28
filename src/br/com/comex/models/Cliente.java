@@ -12,10 +12,10 @@ public class Cliente {
 	private String complemento;
 	private String bairro;
 	private String cidade;
-	private String estado;
+	private Estado estado;
 
 	public Cliente(String nome, String cpf, String telefone, String rua, String numeroEnd, String complemento, 
-			String bairro, String cidade, String estado) {
+			String bairro, String cidade, Estado estado) {
 		
 		this.id = contadorID;
 		this.nome = nome;
@@ -45,7 +45,7 @@ public class Cliente {
 			throw new IllegalArgumentException("bairro deve conter 2 ou mais carac, e deve sere n nulo");
 		if (cidade.length() <= 1 | cidade == null)
 			throw new IllegalArgumentException("cidade dever conter 2 ou mais catac, e deve ser n nulo");	
-		if (estado.length() != 2 | numeroEnd == null)
+		if (this.estado != estado | numeroEnd == null)
 			throw new IllegalArgumentException("estado deve conter 2 carac, e n pode ser nulo ");
 	}
 	
@@ -85,7 +85,17 @@ public class Cliente {
 		return this.cidade;
 	}
 	
-	public String getEstado() {
+	public enum Estado {
+		AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG,
+		PA, PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO;
+	}
+	
+	public Estado getEstado() {
 		return this.estado;
+	}
+	
+	@Override
+	public String toString() {
+		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
 	}
 }

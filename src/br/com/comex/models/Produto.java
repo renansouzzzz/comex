@@ -56,4 +56,9 @@ public class Produto {
 	public double calculaImposto() {
 		return this.precoUnitario * 0.4;
 	}
+	
+	@Override
+	public String toString() {
+		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
+	}
 }

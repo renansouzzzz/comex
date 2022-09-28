@@ -76,6 +76,11 @@ public class ItemPedido {
 		}
 		return 0;
 	}
+	
+	@Override
+	public String toString() {
+		return "Principais informações -> ID: " + getId() + " Preço unitário: " + getPrecoUnitario();
+	}
 }
 
 
