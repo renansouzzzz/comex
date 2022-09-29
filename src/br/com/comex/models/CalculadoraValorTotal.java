@@ -5,7 +5,7 @@ public class CalculadoraValorTotal extends ItemPedido {
 	
 	public CalculadoraValorTotal(int id, double precoUnitario,
 			int quantidadeComprada, ProdutoConstructor produto,
-			Pedido pedido, double desconto, int tipoDesconto) throws MyException{
+			Pedido pedido, double desconto, int tipoDesconto) throws ComexException{
 		super(id, precoUnitario, quantidadeComprada, produto, pedido, desconto, tipoDesconto);
 	}
 

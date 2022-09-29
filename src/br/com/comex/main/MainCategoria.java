@@ -2,11 +2,12 @@ package br.com.comex.main;
 
 import br.com.comex.models.Categoria;
 import br.com.comex.models.Categoria.statusE;
-import br.com.comex.models.MyException;
+import br.com.comex.models.ComexException;
+
 
 
 public class MainCategoria {
-	public static void main(String[] args) throws MyException {
+	public static void main(String[] args) throws ComexException {
 		
 		// testando valores inválidos e válidos
 		Categoria categoria1 = new Categoria("IN", statusE.ATIVA);
