@@ -37,23 +37,23 @@ public class Cliente {
 	
 	public void validacaoId() {
 		if (id < 0)
-			throw new IllegalArgumentException("Id deve ser maior que 0");
+			throw new ComexException("Id deve ser maior que 0");
 	}
 	
 	public void validacaoNome() {
 		if (nome.length() < 5 | nome == null)
-			throw new IllegalArgumentException("O nome deve ser maior que 5, e deve ser n nulo");
+			throw new ComexException("O nome deve ser maior que 5, e deve ser n nulo");
 		
 		if (nome.matches("[0-9].*")) 
-			throw new IllegalArgumentException("O nome deve iniciar com letras!");
+			throw new ComexException("O nome deve iniciar com letras!");
 	}
 	
 	public void validacaoTelefone() {
 		if (telefone.length() < 11 | telefone.length() > 16 | telefone == null)
-			throw new IllegalArgumentException("telefone deve ser entre 11 e 16 numeros, e deve ser n nulo");
+			throw new ComexException("telefone deve ser entre 11 e 16 numeros, e deve ser n nulo");
 	
 		if (!telefone.matches("^([0-9]{2}) ?[0-9]{1} ?([0-9]{2}\\-?)$")) 
-			throw new IllegalArgumentException("O telefone deve ser formatado da "
+			throw new ComexException("O telefone deve ser formatado da "
 					+ "forma correta. Ex: (00) 0 0000-0000");
 	}
 	

@@ -7,7 +7,7 @@ import br.com.comex.models.ComexException;
 
 
 public class MainCategoria {
-	public static void main(String[] args) throws ComexException {
+	public static void main(String[] args) {
 		
 		// testando valores inválidos e válidos
 		Categoria categoria1 = new Categoria("4INFORMÁTICA", statusE.ATIVA);
