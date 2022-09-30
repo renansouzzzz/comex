@@ -4,7 +4,7 @@ public class CalculadoraValorTotal extends ItemPedido {
 	double total;
 	
 	public CalculadoraValorTotal(double precoUnitario,
-			int quantidadeComprada, ProdutoConstructor produto,
+			int quantidadeComprada, Produto produto,
 			Pedido pedido, double desconto, int tipoDesconto) throws ComexException{
 		super(precoUnitario, quantidadeComprada, produto, pedido, desconto, tipoDesconto);
 	}
@@ -13,7 +13,7 @@ public class CalculadoraValorTotal extends ItemPedido {
 		total = this.precoUnitario * this.quantidadeComprada;
 	}
 	
-	public double calcula(ProdutoConstructor ProdutoConstructor) {
+	public double calcula(Produto Produto) {
 		return this.total;
 	}
 }

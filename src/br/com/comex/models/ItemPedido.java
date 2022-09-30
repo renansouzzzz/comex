@@ -5,13 +5,13 @@ public class ItemPedido {
 	private long id;
 	double precoUnitario;
 	int quantidadeComprada;
-	ProdutoConstructor produto;
+	Produto produto;
 	Pedido pedido;
 	double desconto;
 	int tipoDesconto = 0;
 	
 	// Cada vez que for chamado o construtor o ID incrementará + 1	
-	public ItemPedido(double precoUnitario, int quantidadeComprada, ProdutoConstructor produto, Pedido pedido,
+	public ItemPedido(double precoUnitario, int quantidadeComprada, Produto produto, Pedido pedido,
 			double desconto, int tipoDesconto) {
 		
 		this.id = contadorID;
@@ -36,7 +36,7 @@ public class ItemPedido {
 		return quantidadeComprada;
 	}
 	
-	public ProdutoConstructor getProduto() {
+	public Produto getProduto() {
 		return produto;
 	}
 	

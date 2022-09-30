@@ -1,6 +1,6 @@
 package br.com.comex.models;
 
-public class ProdutoConstructor {
+public class ProdutoConstructor extends Produto{
 	private static long contadorID = 1;
 	private long id;
 	private String nome;
@@ -8,11 +8,9 @@ public class ProdutoConstructor {
 	private double precoUnitario;
 	private int quantidadeEstoque;
 	private String categoriaProduto;
-
-	//IllegalArgumentException ex = new IllegalArgumentException();
 	
 	public ProdutoConstructor(String nome, double precoUnitario, int quantidadeEstoque, String categoriaProduto) {
-		
+		super();
 		this.id = contadorID;
 		this.nome = nome;
 		this.precoUnitario = precoUnitario;
