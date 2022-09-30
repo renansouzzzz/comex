@@ -5,13 +5,13 @@ import br.com.comex.models.Cliente.Estado;
 
 public class MainCliente {
 	public static void main(String[] args) {
-	Cliente Ana = new Cliente("Ana Paula", "333.333.333-33", "(00) 0 0000-0000", "Rua Souza Aparecida", "44", "Apartamento", 
+	Cliente Ana = new Cliente("Ana Paula", "333.333.333-33", "(11) 1 1111-1111", "Rua Souza Aparecida", "44", "Apartamento", 
 			"Jd. Mourisco", "Ubatuba", Estado.AM);
 	
-	Cliente Eli = new Cliente("Eli José", "222.222.222-22", "(00) 0 0000-0000", "Rua Barbosa Silva", "23", "Casa", 
+	Cliente Eli = new Cliente("Eli José", "222.222.222-22", "(22) 2 2222-2222", "Rua Barbosa Silva", "23", "Casa", 
 			"Vila Araújo", "São José", Estado.SP);
 	
-	Cliente Gabi = new Cliente("Gabi Moura", "444.444.444-44", "(00) 0 0000-0000", "Avenida Silveira", "108", "Prédio 3", 
+	Cliente Gabi = new Cliente("Gabi Moura", "444.444.444-44", "(33) 3 333-3333", "Avenida Silveira", "108", "Prédio 3", 
 			"Gaslheu", "Pouso Alegre", Estado.MG);
 	
 	System.out.println("-----------------------------");

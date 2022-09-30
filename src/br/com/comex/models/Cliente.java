@@ -52,7 +52,7 @@ public class Cliente {
 		if (telefone.length() < 11 | telefone.length() > 16 | telefone == null)
 			throw new ComexException("telefone deve ser entre 11 e 16 numeros, e deve ser n nulo");
 	
-		if (!telefone.matches("^([0-9]{2}) ?[0-9]{1} ?([0-9]{2}\\-?)$")) 
+		if (!telefone.matches("^\\([0-9]{2}\\) [0-9]{1} ([0-9]{4}-[0-9]{4})$")) 
 			throw new ComexException("O telefone deve ser formatado da "
 					+ "forma correta. Ex: (00) 0 0000-0000");
 	}
