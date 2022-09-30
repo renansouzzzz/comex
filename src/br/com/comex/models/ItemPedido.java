@@ -1,10 +1,8 @@
 package br.com.comex.models;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class ItemPedido {
-	private static AtomicInteger count = new AtomicInteger(0);
-	private int id;
+	private static long contadorID = 1;
+	private long id;
 	double precoUnitario;
 	int quantidadeComprada;
 	ProdutoConstructor produto;
@@ -12,20 +10,21 @@ public class ItemPedido {
 	double desconto;
 	int tipoDesconto = 0;
 	
-	// Cada vez que for chamado o construtor o ID incrementará + 1
-	
-	public ItemPedido(int id, double precoUnitario, int quantidadeComprada, ProdutoConstructor produto, Pedido pedido,
+	// Cada vez que for chamado o construtor o ID incrementará + 1	
+	public ItemPedido(double precoUnitario, int quantidadeComprada, ProdutoConstructor produto, Pedido pedido,
 			double desconto, int tipoDesconto) {
-		this.id = count.incrementAndGet();
+		
+		this.id = contadorID;
 		this.precoUnitario = precoUnitario;
 		this.quantidadeComprada = quantidadeComprada;
 		this.produto = produto;
 		this.pedido = pedido;
 		this.desconto = desconto;
 		this.tipoDesconto = tipoDesconto;
+		contadorID++;
 	}
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 	

@@ -5,11 +5,11 @@ import br.com.comex.models.ProdutoIsento;
 public class MainProduto {
 	public static void main(String[] args) {
 		
-		ProdutoIsento produto1Isento = new ProdutoIsento(3, "Notebook Samsung", "Descrição", 3523
+		ProdutoIsento produto1Isento = new ProdutoIsento("Notebook Samsung", "Descrição", 3523
 				, 6, "Informática");
 		
 		// produto com problema
-		ProdutoIsento produto2Isento = new ProdutoIsento(0, "Not", "Des3", 3523
+		ProdutoIsento produto2Isento = new ProdutoIsento("5Notebook Dell", "Des3", 3523
 				, 6, "Informática");
 	
 		

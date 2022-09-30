@@ -28,25 +28,59 @@ public class Cliente {
 		this.cidade = cidade;
 		this.estado = estado;
 		contadorID++;
+		validacaoId();
+		validacaoNome();
+		validacaoCpf();
+		validacaoTelefone();
+		validacaoEndereco();		
+	}
 	
-		if (this.id < 0)
+	public void validacaoId() {
+		if (id < 0)
 			throw new IllegalArgumentException("Id deve ser maior que 0");
+	}
+	
+	public void validacaoNome() {
 		if (nome.length() < 5 | nome == null)
 			throw new IllegalArgumentException("O nome deve ser maior que 5, e deve ser n nulo");
-		if (cpf.length() < 11 | cpf.length() > 14 | cpf == null)
-			throw new IllegalArgumentException("cpf deve conter de 11 a 14 carac,e deve sere n nulo");
+		
+		if (nome.matches("[0-9].*")) 
+			throw new IllegalArgumentException("O nome deve iniciar com letras!");
+	}
+	
+	public void validacaoTelefone() {
 		if (telefone.length() < 11 | telefone.length() > 16 | telefone == null)
 			throw new IllegalArgumentException("telefone deve ser entre 11 e 16 numeros, e deve ser n nulo");
-		if (rua.length() < 5 | cpf == null)
-			throw new IllegalArgumentException("o nome da rua deve ter pelo menos 5 carac, e deve ser n nulo");	
-		if (numeroEnd.length() <= 1 | numeroEnd == null)
-			throw new IllegalArgumentException("numero do endereco deve conter 2, e deve ser mais carac ou n nulo");
+	
+		if (!telefone.matches("^([0-9]{2}) ?[0-9]{1} ?([0-9]{2}\\-?)$")) 
+			throw new IllegalArgumentException("O telefone deve ser formatado da "
+					+ "forma correta. Ex: (00) 0 0000-0000");
+	}
+	
+	public void validacaoCpf() {
+		if (cpf.length() < 11 | cpf.length() > 14 | cpf == null)
+			throw new IllegalArgumentException("cpf deve conter de 11 a 14 carac,e deve sere n nulo");
+		
+		if (!cpf.matches("^([0-9]{3}\\.?){3}-?[0-9]{2}$")) 
+			throw new IllegalArgumentException("O CPF deve conter '.' e '-' ");
+	}
+	
+	public void validacaoEndereco() {
+		
+		if (rua.length() < 5 | rua == null)
+			throw new IllegalArgumentException("o nome da rua deve ter pelo menos 5 carac, e deve ser n nulo");
+		
 		if (bairro.length() <= 1 | bairro == null)
 			throw new IllegalArgumentException("bairro deve conter 2 ou mais carac, e deve sere n nulo");
+		
 		if (cidade.length() <= 1 | cidade == null)
 			throw new IllegalArgumentException("cidade dever conter 2 ou mais catac, e deve ser n nulo");	
-		if (this.estado != estado | numeroEnd == null)
+		
+		if (estado != estado)
 			throw new IllegalArgumentException("estado deve conter 2 carac, e n pode ser nulo ");
+		
+		if (numeroEnd.length() <= 1 | numeroEnd == null)
+			throw new IllegalArgumentException("numero do endereco deve conter 2, e deve ser mais carac ou n nulo");
 	}
 	
 	public long getId() {

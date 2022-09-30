@@ -12,14 +12,28 @@ public class Categoria {
 		this.nome = nome;
 		this.status = status;
 		contadorID++;
-		if (id <= 0 | nome.length() < 3 |
-				this.status != statusE.ATIVA |
-				this.status != statusE.INATIVA) throw new ComexException("ID deve ser "
-						+ "maior que 0, nome não pode ser menor que 3 e status deve ser"
-						+ "ativo ou inativo!");
-		
+		validacaoId();
+		validacaoStatus();
+		validacaoNome();
 	}
-		
+
+	public void validacaoId() throws ComexException {
+		if (id <= 0 | nome.length() < 3) 
+			throw new ComexException("ID deve ser maior que 0,"
+					+ " nome não pode ser menor que 3 e status deve ser ativo ou inativo!");
+	}
+	
+	public void validacaoStatus() throws ComexException {
+		if (status != statusE.ATIVA &&
+				status != statusE.INATIVA) 
+			throw new ComexException("O status deve prevalecer Ativa ou Inativa!");
+	}
+	
+	public void validacaoNome() throws ComexException {
+		if (nome.matches("[0-9].*")) 
+			throw new ComexException("O nome deve iniciar com letras!");
+	}
+
 	public long getId() {
 		return this.id;
 	}
@@ -41,3 +55,4 @@ public class Categoria {
 		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
 	}
 }
+

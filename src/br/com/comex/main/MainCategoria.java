@@ -10,7 +10,7 @@ public class MainCategoria {
 	public static void main(String[] args) throws ComexException {
 		
 		// testando valores inválidos e válidos
-		Categoria categoria1 = new Categoria("IN", statusE.ATIVA);
+		Categoria categoria1 = new Categoria("4INFORMÁTICA", statusE.ATIVA);
 		Categoria categoria2 = new Categoria("MÓVEIS", statusE.INATIVA);
 		Categoria categoria3 = new Categoria("LIVROS", statusE.ATIVA);
 

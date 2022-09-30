@@ -1,20 +1,19 @@
 package br.com.comex.models;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Pedido {
-	private static AtomicInteger count = new AtomicInteger(0);
-	private int id;
+	private static long contadorID;
+	private long id;
 	private String data;
 	public Cliente cliente;
 
-	public Pedido(int id, String data, Cliente cliente){
-		this.id = count.incrementAndGet();
+	public Pedido(String data, Cliente cliente){
+		this.id = contadorID;
 		this.data = data;
 		this.cliente = cliente;
+		contadorID++;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 	

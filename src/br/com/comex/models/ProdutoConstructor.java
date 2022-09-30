@@ -1,7 +1,5 @@
 package br.com.comex.models;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class ProdutoConstructor {
 	private static long contadorID = 1;
 	private long id;
@@ -14,18 +12,33 @@ public class ProdutoConstructor {
 	//IllegalArgumentException ex = new IllegalArgumentException();
 	
 	public ProdutoConstructor(String nome, double precoUnitario, int quantidadeEstoque, String categoriaProduto) {
+		
 		this.id = contadorID;
 		this.nome = nome;
 		this.precoUnitario = precoUnitario;
 		this.quantidadeEstoque = quantidadeEstoque;
 		this.categoriaProduto = categoriaProduto;
 		contadorID++;
-		
-		if (id <= 0 | precoUnitario <= 0 | quantidadeEstoque <= 0) throw new IllegalArgumentException();
-		if (nome.length() <= 5) throw new IllegalArgumentException();
-		if (categoriaProduto == null) throw new IllegalArgumentException();
-		}
+		validacaoId();
+		validacaoId();
+		validacaoCatProduto();
+	}
 
+	public void validacaoId() {
+		if (id <= 0 | precoUnitario <= 0 | quantidadeEstoque <= 0)
+			throw new IllegalArgumentException();
+	}
+	
+	public void validacaoNome() {
+		if (nome.length() <= 5)
+			throw new IllegalArgumentException();
+	}
+	
+	public void validacaoCatProduto() {
+		if (categoriaProduto == null)
+			throw new IllegalArgumentException();
+	}
+	
 	public long getId() {
 		return this.id;
 	}

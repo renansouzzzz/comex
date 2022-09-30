@@ -3,9 +3,9 @@ package br.com.comex.models;
 
 public class ProdutoIsento extends Produto {
 	
-	public ProdutoIsento(int id, String nome, String descricao, double precoUnitario, int quantidadeEstoque,
+	public ProdutoIsento(String nome, String descricao, double precoUnitario, int quantidadeEstoque,
 			String categoriaProduto) {
-		super(id, nome, descricao, precoUnitario, quantidadeEstoque, categoriaProduto);	
+		super(nome, descricao, precoUnitario, quantidadeEstoque, categoriaProduto);	
 	}
 	
 	int id;
@@ -15,7 +15,7 @@ public class ProdutoIsento extends Produto {
 	int quantidadeEstoque;
 	String categoriaProduto;	
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
