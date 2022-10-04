@@ -1,11 +1,10 @@
 package br.com.comex.main;
 
-import br.com.comex.models.Cliente;
+import br.com.comex.models.Cliente; 
 import br.com.comex.models.Cliente.Estado;
 import br.com.comex.models.ItemPedido;
 import br.com.comex.models.Pedido;
 import br.com.comex.models.Produto;
-import br.com.comex.models.ProdutoConstructor;
 
 public class MainItemPedido {
 	public static void main(String[] args) {
