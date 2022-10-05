@@ -5,10 +5,8 @@ public class PedidoCsv {
     private String categoria;
     private String produto;
     private String cliente;
-
     private String preco;
     private String quantidade;
-
     private String data;
 
     public  PedidoCsv(String categoria, String produto, String cliente, String preco, String quantidade, String data) {
@@ -36,8 +34,9 @@ public class PedidoCsv {
         return preco;
     }
 
+    // retorna a quantidade já como integer
     public String getQuantidade() {
-        return quantidade;
+		return quantidade;
     }
 
     public String getData() {

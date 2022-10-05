@@ -9,7 +9,7 @@ import java.util.List;
 
 public class LeitorPedidoCsv {
 	
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		
 		int totalLinhas = 1;
 		
@@ -22,9 +22,9 @@ public class LeitorPedidoCsv {
 		String linha = bf.readLine();
 		
 		while(linha != null) {
-			System.out.println(linha + "\n");
 			linha = bf.readLine();
-			totalLinhas++;
+			lista.add(linha);
+			totalLinhas++;	
 		}
 		
 		int linhas = totalLinhas - 2;
