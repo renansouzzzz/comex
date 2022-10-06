@@ -16,11 +16,8 @@ public class TotalCategorias {
 		Scanner scanner = new Scanner(file);
 				
 		scanner.nextLine();
-		
 		String split[] = null;
-		
-		
-		
+
 		while (scanner.hasNextLine()) {
 			String linha = scanner.nextLine();
 			split = linha.split(",");
