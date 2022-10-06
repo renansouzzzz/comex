@@ -1,38 +1,40 @@
 package br.com.comex.csv;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class LeitorPedidoCsv {
 	
-	public static void main(String[] args) throws IOException {
+	public List<PedidoCsv> readerPedidoCsv() throws FileNotFoundException {		
+		List<PedidoCsv> lista = new ArrayList<PedidoCsv>();
+
+		InputStream file = new FileInputStream("pedidos.csv");
+		Scanner scanner = new Scanner(file);
 		
-		int totalLinhas = 1;
+		scanner.nextLine();
 		
-		List lista = new ArrayList<PedidoCsv>();
-		
-		FileInputStream file = new FileInputStream("pedidos.csv");
-		InputStreamReader reader = new InputStreamReader(file);
-		BufferedReader bf = new BufferedReader(reader);
-		
-		String linha = bf.readLine();
-		
-		while(linha != null) {
-			linha = bf.readLine();
-			lista.add(linha);
-			totalLinhas++;	
+		while(scanner.hasNextLine()) {
+			String linha = scanner.nextLine();
+			String split[] = linha.split(",");
+
+			String categoria = split[0];
+			String produto = split[1];
+			String preco = split[2];
+			String quantidade = split[3];
+			String data = split[4]; 
+
+			PedidoCsv pedido = new PedidoCsv(categoria, produto, preco, quantidade, data);	
+			lista.add(pedido);
 		}
 		
-		int linhas = totalLinhas - 2;
-		lista.add(linhas);		
+		scanner.close();
 		
-		System.out.println("Total de pedidos: " + lista);
-		
-		bf.close();
-	}
+		return lista;
+	} 
 
 }
+	
