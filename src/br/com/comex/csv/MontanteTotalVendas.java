@@ -1,7 +1,9 @@
 package br.com.comex.csv;
 
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class MontanteTotalVendas {
 	
@@ -10,6 +12,8 @@ public class MontanteTotalVendas {
 		LeitorPedidoCsv leitor = new LeitorPedidoCsv();
 		List<PedidoCsv> pedidosCsv = leitor.readerPedidoCsv();
 		double soma = 0;
+		
+		Locale ptBr = new Locale("pt", "BR");
 		
 		for (PedidoCsv item : pedidosCsv) {
 			String vendas = item.getPreco();
@@ -21,7 +25,7 @@ public class MontanteTotalVendas {
 			soma = soma + parseVendas * parseQuantidades;
 		}
 		
-		System.out.println("Montante de vendas: " + soma);
+		System.out.println("Montante de vendas: " + NumberFormat.getCurrencyInstance(ptBr).format(soma));
 		
 		
 	}

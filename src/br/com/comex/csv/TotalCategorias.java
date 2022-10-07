@@ -16,7 +16,7 @@ public class TotalCategorias {
 		
 		
 		if(!categorias.contains(categoriaContem)) 
-			categorias.add(categoriaContem);;
+			categorias.add(categoriaContem);
 		}
 		
 		System.out.println("Total de categorias: " + categorias.size());
