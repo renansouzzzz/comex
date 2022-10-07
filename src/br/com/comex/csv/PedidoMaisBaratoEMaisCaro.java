@@ -2,8 +2,6 @@ package br.com.comex.csv;
 
 import java.io.IOException;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -13,18 +11,22 @@ public class PedidoMaisBaratoEMaisCaro {
 		
 		LeitorPedidoCsv leitor = new LeitorPedidoCsv();
 		List<PedidoCsv> pedidosCsv = leitor.readerPedidoCsv();
-		List<Double> precos = new ArrayList<Double>();
+		ComparadorPorPreco comparar = new ComparadorPorPreco();
 		Locale ptBr = new Locale("pt", "BR");
 		
-		for (PedidoCsv preco : pedidosCsv) {
-			double precosProd = Double.parseDouble(preco.getPreco());
-			precos.add(precosProd);
-		}
-				
-		Collections.sort(precos);
+		NumberFormat nf = NumberFormat.getCurrencyInstance(ptBr);						
+		pedidosCsv.sort(comparar);
 		
-		System.out.println("Pedido mais barato: " + NumberFormat.getCurrencyInstance(ptBr).format(precos.get(0)));
-		System.out.println("Pedido mais caro: " + NumberFormat.getCurrencyInstance(ptBr).format(precos.get(precos.size() - 1)));
-
+		double quantidadeDoubleB = Double.parseDouble(pedidosCsv.get(0).getQuantidade());
+		double quantidadeDoubleC = Double.parseDouble(pedidosCsv.get(pedidosCsv.size() - 1).getQuantidade());
+		
+		System.out.println("Pedido mais barato: " + nf.format(Double.parseDouble(pedidosCsv.get(0).getPreco()) * quantidadeDoubleB)+ " (" + pedidosCsv.get(0).getProduto() + ")");
+		System.out.println("Pedido mais caro: " + nf.format(Double.parseDouble(pedidosCsv.get(pedidosCsv.size() - 1).getPreco()) * quantidadeDoubleC) + " (" + pedidosCsv.get(pedidosCsv.size() - 1).getProduto() + ")");
+		
+		
 	}
+	
+	
 }
+
+
