@@ -1,28 +1,28 @@
 package br.com.comex.csv;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.List;
 
 public class MontanteTotalVendas {
 	
 	public static void main(String[] args) throws IOException {
 		
-		double total = 0;	
-		FileInputStream file = new FileInputStream("pedidos.csv");
-		Scanner scanner = new Scanner(file);
-				
-		scanner.nextLine();
+		LeitorPedidoCsv leitor = new LeitorPedidoCsv();
+		List<PedidoCsv> pedidosCsv = leitor.readerPedidoCsv();
+		double soma = 0;
 		
-		while (scanner.hasNextLine()) {
-			String linha = scanner.nextLine();
-			String split[] = linha.split(",");
-			double parse = Float.parseFloat(split[2]);
-
-			total = total + parse;			
-		}
-		scanner.close();
+		for (PedidoCsv item : pedidosCsv) {
+			String vendas = item.getPreco();
+			String quantidades = item.getQuantidade();
 			
-	System.out.println("Total de produtos vendidos: " + total);
+			double parseVendas = Double.parseDouble(vendas);
+			double parseQuantidades = Double.parseDouble(quantidades);
+			
+			soma = soma + parseVendas * parseQuantidades;
+		}
+		
+		System.out.println("Montante de vendas: " + soma);
+		
+		
 	}
 }
