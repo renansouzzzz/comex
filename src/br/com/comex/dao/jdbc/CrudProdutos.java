@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import br.com.comex.main.jdbc.ConnectionFactory;
-
 public class CrudProdutos {
 	
 	public static void insereProduto(String nome, String descricao, double preco_unitario, int quantidade_estoque,

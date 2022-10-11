@@ -3,6 +3,8 @@ package br.com.comex.main.jdbc;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import br.com.comex.dao.jdbc.ConnectionFactory;
+
 public class MainTestaConexao {
 
 	public static void main(String[] args) throws SQLException {
