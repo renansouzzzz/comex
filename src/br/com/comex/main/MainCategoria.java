@@ -2,7 +2,6 @@ package br.com.comex.main;
 
 import br.com.comex.models.Categoria;
 import br.com.comex.models.Categoria.statusE;
-import br.com.comex.models.ComexException;
 
 
 
