@@ -2,8 +2,8 @@ package br.com.comex.models;
 
 
 public class Categoria {
-	private static long contadorID = 1;
-	private long id;
+	private static int contadorID = 1;
+	private static int id;
 	private String nome;
 	statusE status;	
 	
@@ -34,8 +34,8 @@ public class Categoria {
 			throw new ComexException("O nome deve iniciar com letras!");
 	}
 
-	public long getId() {
-		return this.id;
+	public static int getId() {
+		return id;
 	}
 
 	public String getNome() {

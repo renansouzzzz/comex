@@ -2,39 +2,76 @@ package br.com.comex.models;
 
 
 public class Produto {
-	private long contadorID = 1;
-	private long id;
+	private static int contadorID = 1;
+	private int id;
 	private String nome;
 	private String descricao;
 	private double precoUnitario;
 	private int quantidadeEstoque;
-	private String categoriaProduto;
+	private int categoriaProduto;
+	private String tipo;
 	
 	public Produto(String nome, String descricao, double precoUnitario,
-			int quantidadeEstoque, String categoriaProduto) {
+			int quantidadeEstoque, int categoriaProduto) {
 		
-		this.id = contadorID;; 
+		this.id = contadorID;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.precoUnitario = precoUnitario;
 		this.quantidadeEstoque = quantidadeEstoque;
 		this.categoriaProduto = categoriaProduto;
 		
+		validacaoId();
+		validacaoNome();
+		validacaoPreco();
+		validacaoProduto();	
+		contadorID++;
+	}
+	
+	public Produto(String nome, String descricao, double precoUnitario,
+			int quantidadeEstoque, int categoriaProduto, int id, String tipo) {
+
+		this.id = id;
+		this.nome = nome;
+		this.descricao = descricao;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeEstoque = quantidadeEstoque;
+		this.categoriaProduto = categoriaProduto;
+		this.tipo = tipo;
+		
+		
+		validacaoId();
+		validacaoNome();
+		validacaoPreco();
+		validacaoProduto();	
+	}
+	
+	public void validacaoId(){
 		if (id <= 0) 
 			throw new IllegalArgumentException("O Id deve ser maior que 0!");
+	}
+	
+	public void validacaoNome(){
 		if (nome.length() <= 5) 
 			throw new IllegalArgumentException("O nome deve ter mais de 5 carac");
-		if (precoUnitario <= 0) 
-			throw new IllegalArgumentException("Preço deve ser maior que 0!");
-		if (quantidadeEstoque <= 0) 
-			throw new IllegalArgumentException("A quantidade deve ser maior que 0!");
-		if (categoriaProduto == null) 
-			throw new IllegalArgumentException("Categoria não pode ser nulo!");
+		
 		if (nome.matches("[0-9].*")) 
 			throw new IllegalArgumentException("O nome deve iniciar com letras!");
 	}
-
-	public long getId() {
+	
+	public void validacaoPreco(){
+		if (precoUnitario <= 0) 
+			throw new IllegalArgumentException("Preço deve ser maior que 0!");
+	}
+	
+	public void validacaoProduto(){
+		if (quantidadeEstoque <= 0) 
+			throw new IllegalArgumentException("A quantidade deve ser maior que 0!");
+		if (categoriaProduto == 0) 
+			throw new IllegalArgumentException("Categoria não pode ser nulo!");
+	}
+	
+	public int getId() {
 		return this.id;
 	}
 	public String getNome() {
@@ -53,8 +90,12 @@ public class Produto {
 		return this.quantidadeEstoque;
 	}
 	
-	public String getCategoriaProd() {
+	public int getCategoriaProd() {
 		return this.categoriaProduto;
+	}
+	
+	public String getTipo() {
+		return tipo;
 	}
 	
 	public double calculaValorEst() {
@@ -65,8 +106,34 @@ public class Produto {
 		return this.precoUnitario * 0.4;
 	}
 	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	public void setPrecoUnitario(double precoUnitario) {
+		this.precoUnitario = precoUnitario;
+	}
+	
+	public void setQuantidadeEstoque(int quantidadeEstoque) {
+		this.quantidadeEstoque = quantidadeEstoque;
+	}
+	
+	public void setCategoriaProduto(int categoriaProduto) {
+		this.categoriaProduto = categoriaProduto;
+	}
+	
 	@Override
 	public String toString() {
-		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
+		return "ID: " + getId() + "\n Nome: " + getNome() + "\n Descrição: " + getDescricao() +
+		"\n Preço Unitário: " + getPrecoUni() + "\n Quantidade Estoque: " + getQuantidadeEst()
+		+ "\n Categoria Produto: " + getCategoriaProd() + "\n\n";
 	}
 }

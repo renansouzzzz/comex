@@ -21,10 +21,10 @@ public class MainItemPedido {
 		Pedido pedido4 = new Pedido("13/09/2022", new Cliente("Marcelo", "555.555.555-55", "(44)4444-4444", "Rodovia Dutra", "56", "Casa", 
 				"Machel", "Porto", Estado.GO));
 		
-		Produto produto1 = new Produto("Óculos de Sol", "Óculos top", 170.00, 4, "Acessório");
-		Produto produto2 = new Produto("Monitor 144hz", "Monitor versátil", 1760.00, 7, "Tecnologia");
-		Produto produto3 = new Produto("Carregador Dell", "Carregador duradouro", 260.00, 2, "Tecnologia");
-		Produto produto4 = new Produto("Violão 6 acordes", "Violão com ótimos acordes", 670.00, 1, "Instrumento");
+		Produto produto1 = new Produto("Óculos de Sol", "Óculos top", 170.00, 4, 1, 0, null);
+		Produto produto2 = new Produto("Monitor 144hz", "Monitor versátil", 1760.00, 7, 2, 0, null);
+		Produto produto3 = new Produto("Carregador Dell", "Carregador duradouro", 260.00, 2, 3, 0, null);
+		Produto produto4 = new Produto("Violão 6 acordes", "Violão com ótimos acordes", 670.00, 1, 4, 0, null);
 		
 		
 		ItemPedido itemPedido1 = new ItemPedido(70.00, 2, produto1, pedido1, 0.10, 1);

@@ -6,11 +6,11 @@ public class MainProduto {
 	public static void main(String[] args) {
 		
 		ProdutoIsento produto1Isento = new ProdutoIsento("Notebook Samsung", "Descrição", 3523
-				, 6, "Informática");
+				, 6, 1, 0);
 		
 		// produto com problema
 		ProdutoIsento produto2Isento = new ProdutoIsento("5Notebook Dell", "Des3", 3523
-				, 6, "Informática");
+				, 6, 2, 0);
 	
 		
 		// Neste caso faremos o produto 2 utilizar a funcao produto isento

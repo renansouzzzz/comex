@@ -12,6 +12,7 @@ public class Cliente {
 	private String complemento;
 	private String bairro;
 	private String cidade;
+	private String estados;
 	private Estado estado;
 
 	public Cliente(String nome, String cpf, String telefone, String rua, String numeroEnd, String complemento, 
@@ -28,11 +29,26 @@ public class Cliente {
 		this.cidade = cidade;
 		this.estado = estado;
 		contadorID++;
+		
 		validacaoId();
 		validacaoNome();
 		validacaoCpf();
 		validacaoTelefone();
 		validacaoEndereco();		
+	}
+	
+	public Cliente(Integer id,String nome, String cpf, String telefone, String rua,
+			String numeroEnd, String complemento, String bairro, String cidade, String estados) {
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.rua = rua;
+		this.numeroEnd = numeroEnd;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estados = estados;
 	}
 	
 	public void validacaoId() {
@@ -127,9 +143,16 @@ public class Cliente {
 	public Estado getEstado() {
 		return this.estado;
 	}
+	public String getEstados() {
+		return estados;
+		
+	}
 	
 	@Override
 	public String toString() {
-		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
+		return "ID: " + getId() + "\n Nome: " + getNome() + "\n CPF: " + getCpf() +
+				"\n Telefone: " + getTelefone() + "\n Rua: " + getRua()
+				+ "\n Numero Endereço: " + getNumeroEnd() + "\n Complemento: " + getComplemento() +
+				"\n Bairro: " + getBairro() + "\n Cidade: " + getCidade() + "\n\n";
 	}
 }
