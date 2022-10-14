@@ -3,12 +3,13 @@ package br.com.comex.models;
 public class ItemPedido {
 	private static long contadorID = 1;
 	private long id;
-	double precoUnitario;
-	int quantidadeComprada;
-	Produto produto;
-	Pedido pedido;
-	double desconto;
-	int tipoDesconto = 0;
+	private double precoUnitario;
+	private int quantidadeComprada;
+	private Produto produto;
+	private Pedido pedido;
+	private double desconto;
+	private int tipoDesconto = 0;
+	private String tipo_desconto;
 	
 	// Cada vez que for chamado o construtor o ID incrementará + 1	
 	public ItemPedido(double precoUnitario, int quantidadeComprada, Produto produto, Pedido pedido,
@@ -22,6 +23,16 @@ public class ItemPedido {
 		this.desconto = desconto;
 		this.tipoDesconto = tipoDesconto;
 		contadorID++;
+	}
+	
+	public ItemPedido(Integer id, double precoUnitario, Integer quantidadeComprada, Produto produto, Pedido pedido, double desconto, String tipo_desconto) {
+		this.id = id;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeComprada = quantidadeComprada;
+		this.produto = produto;
+		this.pedido = pedido;
+		this.desconto = desconto;
+		this.tipo_desconto = tipo_desconto;
 	}
 	
 	public long getId() {
@@ -54,6 +65,11 @@ public class ItemPedido {
 	
 	public double precoSemDesconto() {
 		return this.precoUnitario * this.quantidadeComprada;
+	}
+	
+	public String getTipo_desconto() {
+		return tipo_desconto;
+		
 	}
 	
 	

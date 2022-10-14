@@ -9,9 +9,9 @@ public class CalculadoraValorTotal extends ItemPedido {
 		super(precoUnitario, quantidadeComprada, produto, pedido, desconto, tipoDesconto);
 	}
 
-	public void totalValor() {
-		total = this.precoUnitario * this.quantidadeComprada;
-	}
+//	public void totalValor() {
+//		total = this.precoUnitario * this.quantidadeComprada;
+//	}
 	
 	public double calcula(Produto Produto) {
 		return this.total;

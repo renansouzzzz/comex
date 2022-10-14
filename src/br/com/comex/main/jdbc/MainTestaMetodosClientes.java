@@ -4,7 +4,6 @@ import java.sql.SQLException;
 
 import br.com.comex.dao.jdbc.CrudClientesDAO;
 import br.com.comex.models.Cliente;
-import br.com.comex.models.Cliente.Estado;
 
 public class MainTestaMetodosClientes {
 

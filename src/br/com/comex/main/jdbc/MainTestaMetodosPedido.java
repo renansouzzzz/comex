@@ -2,11 +2,7 @@ package br.com.comex.main.jdbc;
 
 import java.sql.SQLException;
 
-import br.com.comex.dao.jdbc.CrudClientesDAO;
 import br.com.comex.dao.jdbc.CrudPedidosDAO;
-import br.com.comex.models.Cliente;
-import br.com.comex.models.Cliente.Estado;
-import br.com.comex.models.Pedido;
 
 public class MainTestaMetodosPedido {
 
