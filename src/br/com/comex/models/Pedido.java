@@ -12,6 +12,12 @@ public class Pedido {
 		this.cliente = cliente;
 		contadorID++;
 	}
+	
+	public Pedido(Integer id, String data, Cliente cliente) {
+		this.id = id;
+		this.data = data;
+		this.cliente = getCliente();
+	}
 
 	public long getId() {
 		return id;
@@ -27,7 +33,7 @@ public class Pedido {
 	
 	@Override
 	public String toString() {
-		return "Principais informações -> ID: " + getId() + " Data: " + getData();
+		return "ID: " + getId() + "\n Data: " + getData() + "\n Cliente_id: " + getCliente().getId();
 	}
 
 }
