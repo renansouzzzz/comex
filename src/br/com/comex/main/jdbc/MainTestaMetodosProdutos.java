@@ -2,7 +2,7 @@ package br.com.comex.main.jdbc;
 
 import java.sql.SQLException;
 
-import br.com.comex.dao.jdbc.CrudProdutosDAO;
+import br.com.comex.dao.jdbc.ProdutoDAO;
 import br.com.comex.models.Categoria;
 import br.com.comex.models.Categoria.statusE;
 import br.com.comex.models.Produto;
@@ -22,7 +22,7 @@ public class MainTestaMetodosProdutos {
 		
 		Categoria categoria = new Categoria("Informática", statusE.ATIVA);
 //		
-		CrudProdutosDAO.atualizaProduto(produto, categoria);
+		ProdutoDAO.atualizaProduto(produto, categoria);
 //		
 // FALTA APENAS O ATUALIZA!!!!
 //		

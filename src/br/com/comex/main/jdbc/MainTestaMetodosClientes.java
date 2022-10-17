@@ -2,7 +2,7 @@ package br.com.comex.main.jdbc;
 
 import java.sql.SQLException;
 
-import br.com.comex.dao.jdbc.CrudClientesDAO;
+import br.com.comex.dao.jdbc.ClienteDAO;
 import br.com.comex.models.Cliente;
 
 public class MainTestaMetodosClientes {
@@ -14,7 +14,7 @@ public class MainTestaMetodosClientes {
 		
 		//CrudClientesDAO.listagemCliente();
 		
-		CrudClientesDAO.atualizaCliente(new Cliente(12, "Paulo Gansoyy", "5656566666", "(11) 5555-5555"
+		ClienteDAO.atualizaCliente(new Cliente(12, "Paulo Gansoyy", "5656566666", "(11) 5555-5555"
 				, "Rua Macedo Padado", "576", "Apartamento 2", "Canuto G", "São Roque", "SP"));
 		
 //		CrudClientesDAO.removeCliente(1);

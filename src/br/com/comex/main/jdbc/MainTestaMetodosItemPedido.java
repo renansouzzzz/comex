@@ -2,7 +2,7 @@ package br.com.comex.main.jdbc;
 
 import java.sql.SQLException;
 
-import br.com.comex.dao.jdbc.CrudItemPedidoDAO;
+import br.com.comex.dao.jdbc.ItemPedidoDAO;
 import br.com.comex.models.Cliente;
 import br.com.comex.models.ItemPedido;
 import br.com.comex.models.Pedido;
@@ -19,7 +19,7 @@ public class MainTestaMetodosItemPedido {
 		
 		ItemPedido itempedido = new ItemPedido(12, 324, 1, produto, pedido, 0, "QUANTIDADE");
 		
-		CrudItemPedidoDAO.insereItemPedido(itempedido, produto, pedido);
+		ItemPedidoDAO.insereItemPedido(itempedido, produto, pedido);
 		
 //		CrudItemPedidoDAO.listagemItemPedido();
 		
