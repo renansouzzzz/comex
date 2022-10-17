@@ -1,5 +1,6 @@
 package br.com.comex.models;
 
+import java.math.BigDecimal;
 
 public class Produto {
 	private static int contadorID = 1;
@@ -10,6 +11,7 @@ public class Produto {
 	private int quantidadeEstoque;
 	private int categoriaProduto;
 	private String tipo;
+	private BigDecimal valor;
 	
 	public Produto(String nome, String descricao, double precoUnitario,
 			int quantidadeEstoque, int categoriaProduto) {
@@ -44,6 +46,11 @@ public class Produto {
 		validacaoNome();
 		validacaoPreco();
 		validacaoProduto();	
+	}
+	
+	public Produto(String nome, BigDecimal precoUnitario) {
+		this.nome = nome;
+		this.valor = precoUnitario;
 	}
 	
 	public void validacaoId(){
