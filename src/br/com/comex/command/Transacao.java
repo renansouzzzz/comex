@@ -20,12 +20,12 @@ public class Transacao {
 		
 		Connection connect = new ConnectionFactory().IniciaConexao();
 		
+
 		try {
 			connect.setAutoCommit(false);
 			
 			for (Command command : linhasComandos) {
 				command.execute();
-				connect.commit();
 			}
 		}
 		
