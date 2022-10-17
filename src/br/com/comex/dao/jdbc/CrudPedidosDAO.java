@@ -18,14 +18,14 @@ public class CrudPedidosDAO {
 		ConnectionFactory testaCon = new ConnectionFactory();
 		Connection con = testaCon.IniciaConexao();
 		
-		String insertSql = "INSERT INTO comex.PEDIDO(id, data, cliente_id)"
-				+ " VALUES (?, ?, ?)";
+		String insertSql = "INSERT INTO comex.PEDIDO(data, cliente_id)"
+				+ " VALUES (?, ?)";
 		
 		PreparedStatement stm = con.prepareStatement(insertSql);
 		
-		stm.setLong(1, pedido.getId());
-		stm.setString(2, pedido.getData());
-		stm.setLong(3, cliente.getId());
+		//stm.setLong(1, pedido.getId());
+		stm.setString(1, pedido.getData());
+		stm.setLong(2, cliente.getId());
 		
 		stm.execute();
 		
@@ -49,7 +49,7 @@ public class CrudPedidosDAO {
 			String data = result.getString("data");
 			Cliente cliente_id = (Cliente) result.getObject("cliente_id");
 			
-			pedidos.add(new Pedido(id, data, cliente_id));
+			pedidos.add(new Pedido(id ,data, cliente_id));
 			
 			System.out.println(pedidos);
 		}

@@ -94,7 +94,10 @@ public class ItemPedido {
 	
 	@Override
 	public String toString() {
-		return "Principais informações -> ID: " + getId() + " Preço unitário: " + getPrecoUnitario();
+		return "ID: " + getId() + "\n Preço unitário: " + getPrecoUnitario()
+		+ "\n Quantidade: " + getQuantidadeComprada() + "\n Produto: " + getProduto()
+		+ "\n Pedido: " + getPedido() + "\n Desconto: " + getDesconto()
+		+ "Tipo desconto: " + getTipoDesconto();
 	}
 }
 

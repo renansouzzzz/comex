@@ -14,7 +14,6 @@ public class Pedido {
 	}
 	
 	public Pedido(Integer id, String data, Cliente cliente) {
-		this.id = id;
 		this.data = data;
 		this.cliente = cliente;
 	}
