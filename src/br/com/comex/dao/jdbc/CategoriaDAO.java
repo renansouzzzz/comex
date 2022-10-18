@@ -13,26 +13,22 @@ import br.com.comex.models.Produto;
 
 public class CategoriaDAO {
 	
-	public static void insereProduto(Produto produto, String tipo) throws SQLException {
+	public static void insereCategoria(Categoria categoria) throws SQLException {
 		
 		ConnectionFactory testaCon = new ConnectionFactory();
 		Connection con = testaCon.IniciaConexao();
-		List<Produto> produtos = new ArrayList<>();
+		List<Categoria> categorias = new ArrayList<>();
 		
-		String insertSql = "INSERT INTO comex.PRODUTO(nome, descricao, preco_unitario, quantidade_estoque, categoria_id,"
-				+ " tipo) "
-				+ "VALUES (?, ?, ?, ?, ?, ?)";
+		String insertSql = "INSERT INTO comex.CATEGORIA(nome, status) VALUES"
+				+ " (?, ?)";
 		
 		PreparedStatement stm = con.prepareStatement(insertSql);
 		
-		produtos.add(produto);
+		categorias.add(categoria);
 		
-		stm.setString(1, produto.getNome());
-		stm.setString(2, produto.getDescricao());
-		stm.setDouble(3, produto.getPrecoUni());
-		stm.setInt(4, produto.getQuantidadeEst());
-		stm.setInt(5, produto.getCategoriaProd());
-		stm.setString(6, produto.getTipo());
+		stm.setString(1, categoria.getNome());
+		stm.setString(2, categoria.getStatus());
+		stm.setInt(3, categoria.getId());
 		
 		stm.execute();
 		
@@ -40,64 +36,53 @@ public class CategoriaDAO {
 		
 	}
 	
-	public static List<Produto> listagemProduto() throws SQLException {
+	public static List<Categoria> listagemCategoria() throws SQLException {
 		
-		List<Produto> produtos = new ArrayList<>();
+		List<Categoria>  categorias = new ArrayList<>();
 		ConnectionFactory conectorFac = new ConnectionFactory();
 		Connection con = conectorFac.IniciaConexao();
 		Statement stm = con.createStatement();
 		
-		stm.execute("SELECT * FROM comex.PRODUTO");
+		stm.execute("SELECT * FROM comex.CATEGORIA");
 		
 		ResultSet result = stm.getResultSet();
 		
 		while (result.next()) {
-			Integer id = result.getInt("id");
 			String nome = result.getString("nome");
-			String descricao = result.getString("descricao");
-			Integer preco_unitario = result.getInt("preco_unitario");
-			Integer quantidade_estoque = result.getInt("quantidade_estoque");
-			int categoria_id = result.getInt("categoria_id");
-			String tipo = result.getString("tipo");
+			String status = result.getString("status");
 			
-			produtos.add(new Produto(nome, descricao,
-					preco_unitario, quantidade_estoque, categoria_id, id, tipo));
+			categorias.add(new Categoria(nome, status));
 			
-			System.out.println(produtos);
+			System.out.println(categorias);
 		}
 		
 		con.close();
-		return produtos;
+		return listagemCategoria();
 	}
 	
-	public static void atualizaProduto(Produto produto, Categoria categoria) throws SQLException {
+	public static void atualizaCategoria(Categoria categoria) throws SQLException {
 		
 		ConnectionFactory conecFac = new ConnectionFactory();
 		Connection con = conecFac.IniciaConexao();
 		
-		String insertSql = "UPDATE comex.PRODUTO SET nome = ?, descricao = ?, preco_unitario = ?, "
-				+ "quantidade_estoque = ?, categoria_id = ?, tipo = ?  where id = ?";
+		String insertSql = "UPDATE comex.CATEGORIA SET nome = ?, status = ? WHERE id = ?";
 		
 		PreparedStatement stm = con.prepareStatement(insertSql);
 		
-		stm.setString(1, produto.getNome());
-		stm.setString(2, produto.getDescricao());
-		stm.setDouble(3, produto.getPrecoUni());
-		stm.setInt(4, produto.getQuantidadeEst());
-		stm.setInt(5, categoria.getId());
-		stm.setString(6, produto.getTipo());
-		stm.setInt(7, produto.getId());
+		stm.setString(1, categoria.getNome());
+		stm.setString(2, categoria.getStatus());
+
 		
 		stm.execute();
 		
 		con.close();
 	}
 	
-	public static void removeProduto(Integer id) throws SQLException {
+	public static void removeCategoria(Integer id) throws SQLException {
 		
 		ConnectionFactory conecFac = new ConnectionFactory();
 		Connection con = conecFac.IniciaConexao();
-		String insertSql = "DELETE FROM comex.PRODUTO where id = ?";
+		String insertSql = "DELETE FROM comex.CATEGORIA where id = ?";
 		PreparedStatement stm = con.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
