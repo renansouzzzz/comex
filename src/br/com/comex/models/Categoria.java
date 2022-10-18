@@ -18,7 +18,8 @@ public class Categoria {
 		validacaoNome();
 	}
 	
-	public Categoria(String nome, String sts) {
+	public Categoria(Integer id, String nome, String sts) {
+		this.id = id;
 		this.nome = nome;
 		this.sts = sts;
 	}
@@ -62,7 +63,7 @@ public class Categoria {
 	
 	@Override
 	public String toString() {
-		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
+		return "Categoria [nome=" + nome + ", sts=" + sts + ", status=" + status + "]";
 	}
 }
 

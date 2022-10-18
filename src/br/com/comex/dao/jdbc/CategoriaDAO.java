@@ -29,7 +29,6 @@ public class CategoriaDAO {
 		
 		stm.setString(1, categoria.getNome());
 		stm.setString(2, categoria.getSts());
-		stm.setInt(3, categoria.getId());
 		
 		stm.execute();
 		
@@ -49,16 +48,17 @@ public class CategoriaDAO {
 		ResultSet result = stm.getResultSet();
 		
 		while (result.next()) {
+			Integer id = result.getInt("id");
 			String nome = result.getString("nome");
 			String status = result.getString("status");
 			
-			categorias.add(new Categoria(nome, status));
+			categorias.add(new Categoria(id, nome, status));
 			
 			System.out.println(categorias);
 		}
 		
 		con.close();
-		return listagemCategoria();
+		return categorias;
 	}
 	
 	public static void atualizaCategoria(Categoria categoria) throws SQLException {
@@ -72,8 +72,8 @@ public class CategoriaDAO {
 		
 		stm.setString(1, categoria.getNome());
 		stm.setString(2, categoria.getSts());
+		stm.setInt(3, categoria.getId());
 
-		
 		stm.execute();
 		
 		con.close();

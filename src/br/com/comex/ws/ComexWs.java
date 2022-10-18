@@ -14,9 +14,9 @@ public class ComexWs {
 	private CategoriaDAO categoria = new CategoriaDAO();
 
 	public List<Categoria> getCategorias() throws SQLException {
-		List<Categoria> listaC = CategoriaDAO.listagemCategoria();
+		List<Categoria> listaC = categoria.listagemCategoria();
 
-		return getCategorias();
+		return listaC;
 
 	}
 }
