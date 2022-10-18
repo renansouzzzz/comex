@@ -1,16 +1,22 @@
-package comex;
+package br.com.comex.models;
 
 
 public class ProdutoIsento extends Produto {
+	
+	public ProdutoIsento(String nome, String descricao, double precoUnitario, int quantidadeEstoque,
+			int categoriaProduto, int id) {
+		super(nome, descricao, precoUnitario, quantidadeEstoque, categoriaProduto, id, descricao);	
+	}
+	
 	int id;
 	String nome;
 	String descricao;
 	double precoUnitario;
 	int quantidadeEstoque;
-	String categoriaProduto;
-
+	int categoriaProduto;	
+	
 	public int getId() {
-		return this.id;
+		return id;
 	}
 
 	public String getNome() {
@@ -28,7 +34,7 @@ public class ProdutoIsento extends Produto {
 		return this.quantidadeEstoque;
 	}
 	
-	public String getCategoriaProd() {
+	public int getCategoriaProd() {
 		return this.categoriaProduto;
 	}
 	
@@ -38,6 +44,11 @@ public class ProdutoIsento extends Produto {
 	
 	public double calculaImpostoIsento(Produto precoUnitario) {
 		return 0;
+	}
+	
+	@Override
+	public String toString() {
+		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
 	}
 }
 

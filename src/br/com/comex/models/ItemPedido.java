@@ -1,31 +1,41 @@
-package comex;
-
-import java.util.concurrent.atomic.AtomicInteger;
+package br.com.comex.models;
 
 public class ItemPedido {
-	private static AtomicInteger count = new AtomicInteger(0);
-	private int id;
-	double precoUnitario;
-	int quantidadeComprada;
-	ProdutoConstructor produto;
-	Pedido pedido;
-	double desconto;
-	int tipoDesconto = 0;
+	private static long contadorID = 1;
+	private long id;
+	private double precoUnitario;
+	private int quantidadeComprada;
+	private Produto produto;
+	private Pedido pedido;
+	private double desconto;
+	private int tipoDesconto = 0;
+	private String tipo_desconto;
 	
-	// Cada vez que for chamado o construtor o ID incrementará + 1
-	
-	public ItemPedido(int id, double precoUnitario, int quantidadeComprada, ProdutoConstructor produto, Pedido pedido,
+	// Cada vez que for chamado o construtor o ID incrementará + 1	
+	public ItemPedido(double precoUnitario, int quantidadeComprada, Produto produto, Pedido pedido,
 			double desconto, int tipoDesconto) {
-		this.id = count.incrementAndGet();
+		
+		this.id = contadorID;
 		this.precoUnitario = precoUnitario;
 		this.quantidadeComprada = quantidadeComprada;
 		this.produto = produto;
 		this.pedido = pedido;
 		this.desconto = desconto;
 		this.tipoDesconto = tipoDesconto;
+		contadorID++;
 	}
 	
-	public int getId() {
+	public ItemPedido(Integer id, double precoUnitario, Integer quantidadeComprada, Produto produto, Pedido pedido, double desconto, String tipo_desconto) {
+		this.id = id;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeComprada = quantidadeComprada;
+		this.produto = produto;
+		this.pedido = pedido;
+		this.desconto = desconto;
+		this.tipo_desconto = tipo_desconto;
+	}
+	
+	public long getId() {
 		return id;
 	}
 	
@@ -37,7 +47,7 @@ public class ItemPedido {
 		return quantidadeComprada;
 	}
 	
-	public ProdutoConstructor getProduto() {
+	public Produto getProduto() {
 		return produto;
 	}
 	
@@ -55,6 +65,11 @@ public class ItemPedido {
 	
 	public double precoSemDesconto() {
 		return this.precoUnitario * this.quantidadeComprada;
+	}
+	
+	public String getTipo_desconto() {
+		return tipo_desconto;
+		
 	}
 	
 	
@@ -75,6 +90,14 @@ public class ItemPedido {
 				return this.precoUnitario * this.quantidadeComprada - somaItens;
 		}
 		return 0;
+	}
+	
+	@Override
+	public String toString() {
+		return "ID: " + getId() + "\n Preço unitário: " + getPrecoUnitario()
+		+ "\n Quantidade: " + getQuantidadeComprada() + "\n Produto: " + getProduto()
+		+ "\n Pedido: " + getPedido() + "\n Desconto: " + getDesconto()
+		+ "Tipo desconto: " + getTipoDesconto();
 	}
 }
 
