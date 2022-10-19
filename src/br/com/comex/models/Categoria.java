@@ -1,11 +1,18 @@
 package br.com.comex.models;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Categoria {
 	private static int contadorID = 1;
 	private static int id;
 	private String nome;
+	private String sts;
 	statusE status;	
+	
+	public Categoria() {
+		
+	}
 	
 	public Categoria(String nome, statusE status) throws ComexException {
 		this.id = contadorID;
@@ -15,6 +22,17 @@ public class Categoria {
 		validacaoId();
 		validacaoStatus();
 		validacaoNome();
+	}
+	
+	public Categoria(Integer id, String nome, String sts) {
+		this.id = id;
+		this.nome = nome;
+		this.sts = sts;
+	}
+	
+	public Categoria(String nome) {
+		this.nome = nome;
+		this.sts = "ATIVO";
 	}
 
 	public void validacaoId() throws ComexException {
@@ -50,9 +68,34 @@ public class Categoria {
 		return status;
 	}
 	
+	public String getSts() {
+		return sts;
+	}
+	
+	
+	public static void setContadorID(int contadorID) {
+		Categoria.contadorID = contadorID;
+	}
+
+	public static void setId(int id) {
+		Categoria.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setSts(String sts) {
+		this.sts = "ATIVO";
+	}
+
+	public void setStatus(statusE status) {
+		this.status = status;
+	}
+
 	@Override
 	public String toString() {
-		return "Principais informações -> ID: " + getId() + " Nome: " + getNome();
+		return "Categoria [nome=" + nome + ", status=" + sts + "]";
 	}
 }
 
