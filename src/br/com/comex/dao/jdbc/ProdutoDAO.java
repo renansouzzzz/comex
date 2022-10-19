@@ -18,7 +18,7 @@ public class ProdutoDAO {
 	
 	public ProdutoDAO() throws SQLException {
 		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.IniciaConexao();
+		Connection connection = connect.iniciaConexao();
 	}
 	
 	public static void insereProduto(Produto produto, String tipo) throws SQLException {

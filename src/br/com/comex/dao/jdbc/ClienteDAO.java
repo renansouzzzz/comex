@@ -17,7 +17,7 @@ public class ClienteDAO {
 	
 	public ClienteDAO() throws SQLException {
 		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.IniciaConexao();
+		Connection connection = connect.iniciaConexao();
 	}
 	
 	public static void insereCliente(Cliente cliente) throws SQLException {

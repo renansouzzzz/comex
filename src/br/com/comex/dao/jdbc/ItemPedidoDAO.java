@@ -19,7 +19,7 @@ public class ItemPedidoDAO {
 	
 	public ItemPedidoDAO() throws SQLException {
 		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.IniciaConexao();
+		Connection connection = connect.iniciaConexao();
 	}
 	
 	public static void insereItemPedido(ItemPedido itemPedido, Produto produto, Pedido pedido) throws SQLException {

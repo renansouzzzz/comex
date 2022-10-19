@@ -18,7 +18,7 @@ public class PedidoDAO {
 	
 	public PedidoDAO() throws SQLException {
 		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.IniciaConexao();
+		Connection connection = connect.iniciaConexao();
 	}
 	
 	public static void inserePedido(Pedido pedido, Cliente cliente) throws SQLException {

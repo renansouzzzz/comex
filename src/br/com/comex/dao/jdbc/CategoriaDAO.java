@@ -18,7 +18,7 @@ public class CategoriaDAO {
 	
 	public CategoriaDAO() throws SQLException {
 		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.IniciaConexao();
+		Connection connection = connect.iniciaConexao();
 	}
 	
 	public static void insereCategoria(Categoria categoria) throws SQLException {

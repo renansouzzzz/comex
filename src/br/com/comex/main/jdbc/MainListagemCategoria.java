@@ -12,7 +12,7 @@ public class MainListagemCategoria {
 	public static void main(String[] args) throws SQLException {
 		
 		ConnectionFactory conectorFac = new ConnectionFactory();
-		Connection con = conectorFac.IniciaConexao();
+		Connection con = conectorFac.iniciaConexao();
 		Statement stm = con.createStatement();
 		
 		stm.execute("SELECT * FROM comex.CATEGORIA");
