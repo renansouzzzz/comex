@@ -70,7 +70,6 @@ public class ClienteDAO {
 			System.out.println(clientes);
 		}
 		
-		connection.close();
 		return clientes;
 	}
 	 
@@ -103,6 +102,5 @@ public class ClienteDAO {
 		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
-		connection.close();
 	}
 }

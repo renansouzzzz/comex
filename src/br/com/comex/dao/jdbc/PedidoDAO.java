@@ -33,7 +33,6 @@ public class PedidoDAO {
 		
 		stm.execute();
 		
-		connection.close();
 		
 	}
 	
@@ -56,7 +55,6 @@ public class PedidoDAO {
 			System.out.println(pedidos);
 		}
 		
-		connection.close();
 		return listagemPedido();
 	}
 	 
@@ -72,7 +70,6 @@ public class PedidoDAO {
 		
 		stm.execute();
 		
-		connection.close();
 	}
 	
 	public static void removePedido(Integer id) throws SQLException {
@@ -81,6 +78,5 @@ public class PedidoDAO {
 		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
-		connection.close();
 	}
 }

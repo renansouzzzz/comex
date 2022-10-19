@@ -10,42 +10,36 @@ import java.util.List;
 
 import br.com.comex.models.Categoria;
 import br.com.comex.models.ConnectionFactory;
-import br.com.comex.models.Produto;
 
 public class CategoriaDAO {
 	
-	private static Connection connection;
+	private Connection connection;
 	
 	public CategoriaDAO(Connection connection) {
 		this.connection = connection;
 	}
 	
-	public static void insereCategoria(Categoria categoria) throws SQLException {
-		
-		List<Categoria> categorias = new ArrayList<>();
+	public void insereCategoria(Categoria categoria) throws SQLException {
 		
 		String insertSql = "INSERT INTO comex.CATEGORIA(nome, status) VALUES"
 				+ " (?, ?)";
 		
 		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
-		categorias.add(categoria);
 		
 		stm.setString(1, categoria.getNome());
 		stm.setString(2, categoria.getSts());
 		
 		stm.execute();
-		
-		connection.close();
-		
 	}
 	
-	public static List<Categoria> listagemCategoria() throws SQLException {
+	public List<Categoria> listagemCategoria() throws SQLException {
 		
+		String sqlInsert = "SELECT * FROM comex.CATEGORIA";
+		PreparedStatement stm = connection.prepareStatement(sqlInsert);
 		List<Categoria>  categorias = new ArrayList<>();
-		Statement stm = connection.createStatement();
-		
-		stm.execute("SELECT * FROM comex.CATEGORIA");
+	
+		stm.execute();
 		
 		ResultSet result = stm.getResultSet();
 		
@@ -59,11 +53,10 @@ public class CategoriaDAO {
 			System.out.println(categorias);
 		}
 		
-		connection.close();
 		return categorias;
 	}
 	
-	public static void atualizaCategoria(Categoria categoria) throws SQLException {
+	public void atualizaCategoria(Categoria categoria) throws SQLException {
 		
 		String insertSql = "UPDATE comex.CATEGORIA SET nome = ?, status = ? WHERE id = ?";
 		
@@ -78,11 +71,12 @@ public class CategoriaDAO {
 		connection.close();
 	}
 	
-	public static void removeCategoria(Integer id) throws SQLException {
+	public void removeCategoria(Integer id) throws SQLException {
 		
 		ConnectionFactory conecFac = new ConnectionFactory();
 		Connection con = conecFac.iniciaConexao();
 		String insertSql = "DELETE FROM comex.CATEGORIA where id = ?";
+		
 		PreparedStatement stm = con.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
