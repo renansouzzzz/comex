@@ -16,9 +16,8 @@ public class CategoriaDAO {
 	
 	private static Connection connection;
 	
-	public CategoriaDAO() throws SQLException {
-		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.iniciaConexao();
+	public CategoriaDAO(Connection connection) {
+		this.connection = connection;
 	}
 	
 	public static void insereCategoria(Categoria categoria) throws SQLException {
@@ -82,7 +81,7 @@ public class CategoriaDAO {
 	public static void removeCategoria(Integer id) throws SQLException {
 		
 		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
+		Connection con = conecFac.iniciaConexao();
 		String insertSql = "DELETE FROM comex.CATEGORIA where id = ?";
 		PreparedStatement stm = con.prepareStatement(insertSql);
 		

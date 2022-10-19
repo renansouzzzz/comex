@@ -16,9 +16,8 @@ public class ProdutoDAO {
 	
 	private static Connection connection;
 	
-	public ProdutoDAO() throws SQLException {
-		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.iniciaConexao();
+	public ProdutoDAO(Connection connection) throws SQLException {
+		this.connection = connection;
 	}
 	
 	public static void insereProduto(Produto produto, String tipo) throws SQLException {

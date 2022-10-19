@@ -17,9 +17,8 @@ public class ItemPedidoDAO {
 	
 	private static Connection connection;
 	
-	public ItemPedidoDAO() throws SQLException {
-		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.iniciaConexao();
+	public ItemPedidoDAO(Connection connection) throws SQLException {
+		this.connection = connection;
 	}
 	
 	public static void insereItemPedido(ItemPedido itemPedido, Produto produto, Pedido pedido) throws SQLException {

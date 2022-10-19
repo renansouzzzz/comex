@@ -16,9 +16,8 @@ public class PedidoDAO {
 	
 	private static Connection connection;
 	
-	public PedidoDAO() throws SQLException {
-		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.iniciaConexao();
+	public PedidoDAO(Connection connection) throws SQLException {
+		this.connection = connection;
 	}
 	
 	public static void inserePedido(Pedido pedido, Cliente cliente) throws SQLException {

@@ -15,9 +15,8 @@ public class ClienteDAO {
 	
 	private static Connection connection;
 	
-	public ClienteDAO() throws SQLException {
-		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.iniciaConexao();
+	public ClienteDAO(Connection connection) throws SQLException {
+		this.connection = connection;
 	}
 	
 	public static void insereCliente(Cliente cliente) throws SQLException {
@@ -72,7 +71,7 @@ public class ClienteDAO {
 		}
 		
 		connection.close();
-		return listagemCliente();
+		return clientes;
 	}
 	 
 	public static void atualizaCliente(Cliente cliente) throws SQLException {
