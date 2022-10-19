@@ -8,11 +8,7 @@ import javax.jws.WebParam;
 import javax.jws.WebService;
 
 import br.com.comex.dao.jdbc.CategoriaDAO;
-import br.com.comex.dao.jdbc.ProdutoDAO;
 import br.com.comex.models.Categoria;
-import br.com.comex.models.Produto;
-
-
 
 @WebService
 public class ComexWs {
@@ -24,7 +20,6 @@ public class ComexWs {
 		List<Categoria> listaC = categoria.listagemCategoria();
 
 		return listaC;
-
 	}
 	
 	@WebMethod(operationName="AdicionarCategoria")

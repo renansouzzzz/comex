@@ -1,6 +1,8 @@
 package br.com.comex.models;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Categoria {
 	private static int contadorID = 1;
 	private static int id;

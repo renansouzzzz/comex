@@ -14,16 +14,21 @@ import br.com.comex.models.Produto;
 
 public class CategoriaDAO {
 	
+	private static Connection connection;
+	
+	public CategoriaDAO() throws SQLException {
+		ConnectionFactory connect = new ConnectionFactory();
+		Connection connection = connect.IniciaConexao();
+	}
+	
 	public static void insereCategoria(Categoria categoria) throws SQLException {
 		
-		ConnectionFactory testaCon = new ConnectionFactory();
-		Connection con = testaCon.IniciaConexao();
 		List<Categoria> categorias = new ArrayList<>();
 		
 		String insertSql = "INSERT INTO comex.CATEGORIA(nome, status) VALUES"
 				+ " (?, ?)";
 		
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		categorias.add(categoria);
 		
@@ -32,16 +37,14 @@ public class CategoriaDAO {
 		
 		stm.execute();
 		
-		con.close();
+		connection.close();
 		
 	}
 	
 	public static List<Categoria> listagemCategoria() throws SQLException {
 		
 		List<Categoria>  categorias = new ArrayList<>();
-		ConnectionFactory conectorFac = new ConnectionFactory();
-		Connection con = conectorFac.IniciaConexao();
-		Statement stm = con.createStatement();
+		Statement stm = connection.createStatement();
 		
 		stm.execute("SELECT * FROM comex.CATEGORIA");
 		
@@ -57,18 +60,15 @@ public class CategoriaDAO {
 			System.out.println(categorias);
 		}
 		
-		con.close();
+		connection.close();
 		return categorias;
 	}
 	
 	public static void atualizaCategoria(Categoria categoria) throws SQLException {
 		
-		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
-		
 		String insertSql = "UPDATE comex.CATEGORIA SET nome = ?, status = ? WHERE id = ?";
 		
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setString(1, categoria.getNome());
 		stm.setString(2, categoria.getSts());
@@ -76,7 +76,7 @@ public class CategoriaDAO {
 
 		stm.execute();
 		
-		con.close();
+		connection.close();
 	}
 	
 	public static void removeCategoria(Integer id) throws SQLException {

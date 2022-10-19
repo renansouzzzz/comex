@@ -15,14 +15,14 @@ public class MainTestaMetodosProdutos {
 //		CrudProdutosDAO.insereProduto(new Produto("Copo Tantand", "De vidro", 15, 2, 1, 1), "ISENTO");
 		
 //		
-//		CrudProdutosDAO.listagemProduto();
+		ProdutoDAO.listagemProduto();
 		
-		Produto produto = new Produto("Carregadorr", "Carregador top", 245.00,
-				 2, 1, 1, "ISENTO");
+//		Produto produto = new Produto("Carregadorr", "Carregador top", 245.00,
+//				 2, 1, 1, "ISENTO");
 		
-		Categoria categoria = new Categoria("Informática", statusE.ATIVA);
+//		Categoria categoria = new Categoria("Informática", statusE.ATIVA);
 //		
-		ProdutoDAO.atualizaProduto(produto, categoria);
+//		ProdutoDAO.atualizaProduto(produto, categoria);
 //		
 // FALTA APENAS O ATUALIZA!!!!
 //		

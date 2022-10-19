@@ -13,16 +13,20 @@ import br.com.comex.models.ConnectionFactory;
 
 public class ClienteDAO {
 	
+	private static Connection connection;
+	
+	public ClienteDAO() throws SQLException {
+		ConnectionFactory connect = new ConnectionFactory();
+		Connection connection = connect.IniciaConexao();
+	}
+	
 	public static void insereCliente(Cliente cliente) throws SQLException {
-		
-		ConnectionFactory testaCon = new ConnectionFactory();
-		Connection con = testaCon.IniciaConexao();
 		
 		String insertSql = "INSERT INTO comex.CLIENTE(nome, cpf, telefone, rua, numero,"
 				+ " complemento, bairro, cidade, uf) "
 				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setString(1, cliente.getNome());
 		stm.setString(2, cliente.getCpf());
@@ -36,16 +40,14 @@ public class ClienteDAO {
 		
 		stm.execute();
 		
-		con.close();
+		connection.close();
 		
 	}
 	
 	public static List<Cliente> listagemCliente() throws SQLException {
 		
 		List<Cliente> clientes = new ArrayList<>();
-		ConnectionFactory conectorFac = new ConnectionFactory();
-		Connection con = conectorFac.IniciaConexao();
-		Statement stm = con.createStatement();
+		Statement stm = connection.createStatement();
 		
 		stm.execute("SELECT * FROM comex.CLIENTE");
 		
@@ -69,19 +71,16 @@ public class ClienteDAO {
 			System.out.println(clientes);
 		}
 		
-		con.close();
+		connection.close();
 		return listagemCliente();
 	}
 	 
 	public static void atualizaCliente(Cliente cliente) throws SQLException {
 		
-		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
-		
 		String insertSql = "UPDATE comex.CLIENTE SET nome = ?, cpf = ?, telefone = ?, "
 				+ "rua = ?, numero = ?, complemento = ?, bairro = ?, cidade = ?, uf = ?  where id = ?";
 		
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setString(1, cliente.getNome());
 		stm.setString(2, cliente.getCpf());
@@ -96,17 +95,15 @@ public class ClienteDAO {
 		
 		stm.execute();
 		
-		con.close();
+		connection.close();
 	}
 	
 	public static void removeCliente(Integer id) throws SQLException {
 		
-		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
 		String insertSql = "DELETE FROM comex.CLIENTE where id = ?";
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
-		con.close();
+		connection.close();
 	}
 }

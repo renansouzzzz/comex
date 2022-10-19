@@ -15,16 +15,20 @@ import br.com.comex.models.Produto;
 
 public class ItemPedidoDAO {
 	
+	private static Connection connection;
+	
+	public ItemPedidoDAO() throws SQLException {
+		ConnectionFactory connect = new ConnectionFactory();
+		Connection connection = connect.IniciaConexao();
+	}
+	
 	public static void insereItemPedido(ItemPedido itemPedido, Produto produto, Pedido pedido) throws SQLException {
-		
-		ConnectionFactory testaCon = new ConnectionFactory();
-		Connection con = testaCon.IniciaConexao();
 		
 		String insertSql = "INSERT INTO comex.ITEM_PEDIDO(id, preco_unitario, quantidade, produto_id, pedido_id,"
 				+ " desconto, tipo_desconto) "
 				+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
 		
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setLong(1, itemPedido.getId());
 		stm.setDouble(2, itemPedido.getPrecoUnitario());
@@ -36,16 +40,14 @@ public class ItemPedidoDAO {
 		
 		stm.execute();
 		
-		con.close();
+		connection.close();
 		
 	}
 	
 	public static List<ItemPedido> listagemItemPedido() throws SQLException {
 		
 		List<ItemPedido> itempedidos = new ArrayList<>();
-		ConnectionFactory conectorFac = new ConnectionFactory();
-		Connection con = conectorFac.IniciaConexao();
-		Statement stm = con.createStatement();
+		Statement stm = connection.createStatement();
 		
 		stm.execute("SELECT * FROM comex.ITEM_PEDIDO");
 		
@@ -65,19 +67,16 @@ public class ItemPedidoDAO {
 			System.out.println(itempedidos);
 		}
 		
-		con.close();
+		connection.close();
 		return listagemItemPedido();
 	}
 	 
 	public static void atualizaItemPedido(ItemPedido itemPedido, Produto produto, Pedido pedido) throws SQLException {
 		
-		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
-		
 		String insertSql = "UPDATE comex.ITEM_PEDIDO SET preco_unitario = ?, quantidade = ?, produto_id = ?, "
 				+ "pedido_id = ?, desconto = ?, tipo_desconto = ? where id = ?";
 		
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setDouble(1, itemPedido.getPrecoUnitario());
 		stm.setInt(2, itemPedido.getQuantidadeComprada());
@@ -89,17 +88,15 @@ public class ItemPedidoDAO {
 		
 		stm.execute();
 		
-		con.close();
+		connection.close();
 	}
 	
 	public static void removeItemPedido(Integer id) throws SQLException {
 		
-		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
 		String insertSql = "DELETE FROM comex.ITEM_PEDIDO where id = ?";
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
-		con.close();
+		connection.close();
 	}
 }

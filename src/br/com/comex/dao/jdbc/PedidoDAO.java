@@ -14,15 +14,19 @@ import br.com.comex.models.Pedido;
 
 public class PedidoDAO {
 	
+	private static Connection connection;
+	
+	public PedidoDAO() throws SQLException {
+		ConnectionFactory connect = new ConnectionFactory();
+		Connection connection = connect.IniciaConexao();
+	}
+	
 	public static void inserePedido(Pedido pedido, Cliente cliente) throws SQLException {
-		
-		ConnectionFactory testaCon = new ConnectionFactory();
-		Connection con = testaCon.IniciaConexao();
 		
 		String insertSql = "INSERT INTO comex.PEDIDO(data, cliente_id)"
 				+ " VALUES (?, ?)";
 		
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		//stm.setLong(1, pedido.getId());
 		stm.setString(1, pedido.getData());
@@ -30,16 +34,14 @@ public class PedidoDAO {
 		
 		stm.execute();
 		
-		con.close();
+		connection.close();
 		
 	}
 	
 	public static List<Pedido> listagemPedido() throws SQLException {
 		
 		List<Pedido> pedidos = new ArrayList<>();
-		ConnectionFactory conectorFac = new ConnectionFactory();
-		Connection con = conectorFac.IniciaConexao();
-		Statement stm = con.createStatement();
+		Statement stm = connection.createStatement();
 		
 		stm.execute("SELECT * FROM comex.PEDIDO");
 		
@@ -55,18 +57,15 @@ public class PedidoDAO {
 			System.out.println(pedidos);
 		}
 		
-		con.close();
+		connection.close();
 		return listagemPedido();
 	}
 	 
 	public static void atualizaCliente(Pedido pedido, Cliente cliente) throws SQLException {
 		
-		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
-		
 		String insertSql = "UPDATE comex.PEDIDO SET data = ?, cliente_id = ? where id = ?";
 		
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setString(1, pedido.getData());
 		stm.setLong(2, cliente.getId());
@@ -74,17 +73,15 @@ public class PedidoDAO {
 		
 		stm.execute();
 		
-		con.close();
+		connection.close();
 	}
 	
 	public static void removePedido(Integer id) throws SQLException {
 		
-		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
 		String insertSql = "DELETE FROM comex.PEDIDO where id = ?";
-		PreparedStatement stm = con.prepareStatement(insertSql);
+		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
-		con.close();
+		connection.close();
 	}
 }
