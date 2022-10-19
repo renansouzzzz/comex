@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import br.com.comex.dao.jdbc.ConnectionFactory;
+import br.com.comex.models.ConnectionFactory;
 
 public class MainListagemCategoria {
 
