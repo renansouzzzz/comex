@@ -1,6 +1,8 @@
 package br.com.comex.models;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Cliente {
 	private static long contadorID = 1;
 	private long id;
@@ -15,6 +17,10 @@ public class Cliente {
 	private String estados;
 	private Estado estado;
 
+	public Cliente() {
+		
+	}
+	
 	public Cliente(String nome, String cpf, String telefone, String rua, String numeroEnd, String complemento, 
 			String bairro, String cidade, Estado estado) {
 		
@@ -135,6 +141,50 @@ public class Cliente {
 		return this.cidade;
 	}
 	
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	public void setNumeroEnd(String numeroEnd) {
+		this.numeroEnd = numeroEnd;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public void setEstados(String estados) {
+		this.estados = estados;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
 	public enum Estado {
 		AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG,
 		PA, PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO;

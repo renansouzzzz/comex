@@ -26,7 +26,8 @@ public class InsereProduto implements Command {
 	public void execute() throws Exception {
 		
 		Produto prod = new Produto(produtoNome, produtoValor);
-		ProdutoDAO.insereProduto(prod, "ISENTO");
+		ProdutoDAO produtoDAO = new ProdutoDAO(null);
+		produtoDAO.insereProduto(prod, "ISENTO");
 	}
 	
 }

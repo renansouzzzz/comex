@@ -13,13 +13,13 @@ import br.com.comex.models.ConnectionFactory;
 
 public class ClienteDAO {
 	
-	private static Connection connection;
+	private Connection connection;
 	
-	public ClienteDAO(Connection connection) throws SQLException {
+	public ClienteDAO(Connection connection) {
 		this.connection = connection;
 	}
 	
-	public static void insereCliente(Cliente cliente) throws SQLException {
+	public void insereCliente(Cliente cliente) throws SQLException {
 		
 		String insertSql = "INSERT INTO comex.CLIENTE(nome, cpf, telefone, rua, numero,"
 				+ " complemento, bairro, cidade, uf) "
@@ -43,12 +43,13 @@ public class ClienteDAO {
 		
 	}
 	
-	public static List<Cliente> listagemCliente() throws SQLException {
+	public List<Cliente> listagemCliente() throws SQLException {
 		
+		String sqlInsert = "SELECT * FROM comex.CLIENTE";
+		PreparedStatement stm = connection.prepareStatement(sqlInsert);
 		List<Cliente> clientes = new ArrayList<>();
-		Statement stm = connection.createStatement();
 		
-		stm.execute("SELECT * FROM comex.CLIENTE");
+		stm.execute();
 		
 		ResultSet result = stm.getResultSet();
 		
@@ -73,7 +74,7 @@ public class ClienteDAO {
 		return clientes;
 	}
 	 
-	public static void atualizaCliente(Cliente cliente) throws SQLException {
+	public void atualizaCliente(Cliente cliente) throws SQLException {
 		
 		String insertSql = "UPDATE comex.CLIENTE SET nome = ?, cpf = ?, telefone = ?, "
 				+ "rua = ?, numero = ?, complemento = ?, bairro = ?, cidade = ?, uf = ?  where id = ?";
@@ -96,7 +97,7 @@ public class ClienteDAO {
 		connection.close();
 	}
 	
-	public static void removeCliente(Integer id) throws SQLException {
+	public void removeCliente(Integer id) throws SQLException {
 		
 		String insertSql = "DELETE FROM comex.CLIENTE where id = ?";
 		PreparedStatement stm = connection.prepareStatement(insertSql);

@@ -14,13 +14,13 @@ import br.com.comex.models.Produto;
 
 public class ProdutoDAO {
 	
-	private static Connection connection;
+	private  Connection connection;
 	
 	public ProdutoDAO(Connection connection){
 		this.connection = connection;
 	}
 	
-	public static void insereProduto(Produto produto, String tipo) throws SQLException {
+	public void insereProduto(Produto produto, String tipo) throws SQLException {
 		
 		List<Produto> produtos = new ArrayList<>();
 		
@@ -44,7 +44,7 @@ public class ProdutoDAO {
 		
 	}
 	
-	public static List<Produto> listagemProduto() throws SQLException {
+	public List<Produto> listagemProduto() throws SQLException {
 		
 		List<Produto> produtos = new ArrayList<>();
 		Statement stm = connection.createStatement();
@@ -71,7 +71,7 @@ public class ProdutoDAO {
 		return produtos;
 	}
 	
-	public static void atualizaProduto(Produto produto, Categoria categoria) throws SQLException {
+	public void atualizaProduto(Produto produto, Categoria categoria) throws SQLException {
 		
 		String insertSql = "UPDATE comex.PRODUTO SET nome = ?, descricao = ?, preco_unitario = ?, "
 				+ "quantidade_estoque = ?, categoria_id = ?, tipo = ?  where id = ?";
@@ -90,7 +90,7 @@ public class ProdutoDAO {
 		
 	}
 	
-	public static void removeProduto(Integer id) throws SQLException {
+	public void removeProduto(Integer id) throws SQLException {
 		
 		String insertSql = "DELETE FROM comex.PRODUTO where id = ?";
 		PreparedStatement stm = connection.prepareStatement(insertSql);
