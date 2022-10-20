@@ -10,7 +10,7 @@ public class MainAtualizacaoCategoria {
 
 	public static void main(String[] args) throws SQLException {
 		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
+		Connection con = conecFac.iniciaConexao();
 		Statement stm = con.createStatement();
 		
 		stm.execute("UPDATE comex.CATEGORIA SET nome = 'LIVROS TÉCNICOS' WHERE id = 3");

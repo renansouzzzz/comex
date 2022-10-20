@@ -16,9 +16,8 @@ public class PedidoDAO {
 	
 	private static Connection connection;
 	
-	public PedidoDAO() throws SQLException {
-		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.IniciaConexao();
+	public PedidoDAO(Connection connection) throws SQLException {
+		this.connection = connection;
 	}
 	
 	public static void inserePedido(Pedido pedido, Cliente cliente) throws SQLException {
@@ -34,7 +33,6 @@ public class PedidoDAO {
 		
 		stm.execute();
 		
-		connection.close();
 		
 	}
 	
@@ -57,7 +55,6 @@ public class PedidoDAO {
 			System.out.println(pedidos);
 		}
 		
-		connection.close();
 		return listagemPedido();
 	}
 	 
@@ -73,7 +70,6 @@ public class PedidoDAO {
 		
 		stm.execute();
 		
-		connection.close();
 	}
 	
 	public static void removePedido(Integer id) throws SQLException {
@@ -82,6 +78,5 @@ public class PedidoDAO {
 		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
-		connection.close();
 	}
 }

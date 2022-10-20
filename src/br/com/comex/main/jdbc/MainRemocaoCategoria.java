@@ -11,7 +11,7 @@ public class MainRemocaoCategoria {
 	public static void main(String[] args) throws SQLException {
 		
 		ConnectionFactory conecFac = new ConnectionFactory();
-		Connection con = conecFac.IniciaConexao();
+		Connection con = conecFac.iniciaConexao();
 		Statement stm = con.createStatement();
 		
 		stm.execute("DELETE FROM comex.CATEGORIA where status = 'INATIVA'");

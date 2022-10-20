@@ -17,9 +17,8 @@ public class ItemPedidoDAO {
 	
 	private static Connection connection;
 	
-	public ItemPedidoDAO() throws SQLException {
-		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.IniciaConexao();
+	public ItemPedidoDAO(Connection connection) throws SQLException {
+		this.connection = connection;
 	}
 	
 	public static void insereItemPedido(ItemPedido itemPedido, Produto produto, Pedido pedido) throws SQLException {
@@ -40,7 +39,6 @@ public class ItemPedidoDAO {
 		
 		stm.execute();
 		
-		connection.close();
 		
 	}
 	
@@ -67,7 +65,6 @@ public class ItemPedidoDAO {
 			System.out.println(itempedidos);
 		}
 		
-		connection.close();
 		return listagemItemPedido();
 	}
 	 
@@ -88,7 +85,6 @@ public class ItemPedidoDAO {
 		
 		stm.execute();
 		
-		connection.close();
 	}
 	
 	public static void removeItemPedido(Integer id) throws SQLException {
@@ -97,6 +93,5 @@ public class ItemPedidoDAO {
 		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
-		connection.close();
 	}
 }

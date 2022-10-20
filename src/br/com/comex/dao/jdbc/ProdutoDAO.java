@@ -16,9 +16,8 @@ public class ProdutoDAO {
 	
 	private static Connection connection;
 	
-	public ProdutoDAO() throws SQLException {
-		ConnectionFactory connect = new ConnectionFactory();
-		Connection connection = connect.IniciaConexao();
+	public ProdutoDAO(Connection connection) throws SQLException {
+		this.connection = connection;
 	}
 	
 	public static void insereProduto(Produto produto, String tipo) throws SQLException {
@@ -42,7 +41,6 @@ public class ProdutoDAO {
 		
 		stm.execute();
 		
-		connection.close();
 		
 	}
 	
@@ -70,7 +68,6 @@ public class ProdutoDAO {
 			System.out.println(produtos);
 		}
 		
-		connection.close();
 		return produtos;
 	}
 	
@@ -91,7 +88,6 @@ public class ProdutoDAO {
 		
 		stm.execute();
 		
-		connection.close();
 	}
 	
 	public static void removeProduto(Integer id) throws SQLException {
@@ -100,6 +96,5 @@ public class ProdutoDAO {
 		PreparedStatement stm = connection.prepareStatement(insertSql);
 		
 		stm.setInt(1, id);
-		connection.close();
 	}
 }

@@ -11,7 +11,7 @@ public class MainInsercaoCategoria {
 	public static void main(String[] args) throws SQLException {
 		
 		ConnectionFactory testaCon = new ConnectionFactory();
-		Connection con = testaCon.IniciaConexao();
+		Connection con = testaCon.iniciaConexao();
 		
 		Statement stm = con.createStatement();
 		

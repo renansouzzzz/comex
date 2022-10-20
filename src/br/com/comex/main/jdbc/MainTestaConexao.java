@@ -10,7 +10,7 @@ public class MainTestaConexao {
 	public static void main(String[] args) throws SQLException {
 		
 		ConnectionFactory conFac = new ConnectionFactory();
-		Connection con = conFac.IniciaConexao();
+		Connection con = conFac.iniciaConexao();
 		
 		System.out.println("Conexão efetuada com sucesso!");
 		

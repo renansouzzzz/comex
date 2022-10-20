@@ -18,7 +18,7 @@ public class Transacao {
 	
 	private void executaComandos() throws Exception {
 		
-		Connection connect = new ConnectionFactory().IniciaConexao();
+		Connection connect = new ConnectionFactory().iniciaConexao();
 		
 
 		try {

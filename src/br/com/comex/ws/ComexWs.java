@@ -1,5 +1,6 @@
 package br.com.comex.ws;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -9,14 +10,17 @@ import javax.jws.WebService;
 
 import br.com.comex.dao.jdbc.CategoriaDAO;
 import br.com.comex.models.Categoria;
+import br.com.comex.models.ConnectionFactory;
 
 @WebService
 public class ComexWs {
-
-	private CategoriaDAO categoria = new CategoriaDAO();
+	
+	private Connection connection = 
+			new ConnectionFactory().iniciaConexao();
+	
+	private CategoriaDAO categoria = new CategoriaDAO(connection);
 
 	public List<Categoria> getCategorias() throws SQLException {
-		
 		List<Categoria> listaC = categoria.listagemCategoria();
 
 		return listaC;
@@ -24,11 +28,11 @@ public class ComexWs {
 	
 	@WebMethod(operationName="AdicionarCategoria")
 	public Categoria adicionarCategoria
-	(@WebParam(name="categoriaItem") Categoria categoria) 
+	(@WebParam(name="categoriaItem") Categoria c) 
 			throws SQLException {
 		
-		CategoriaDAO.insereCategoria(categoria);
+		categoria.insereCategoria(c);
 		
-		return categoria;
+		return c;
 	}
 }
