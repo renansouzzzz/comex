@@ -16,7 +16,7 @@ public class ProdutoDAO {
 	
 	private static Connection connection;
 	
-	public ProdutoDAO(Connection connection) throws SQLException {
+	public ProdutoDAO(Connection connection){
 		this.connection = connection;
 	}
 	
