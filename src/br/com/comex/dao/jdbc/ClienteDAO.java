@@ -35,7 +35,7 @@ public class ClienteDAO {
 		stm.setString(6, cliente.getComplemento());
 		stm.setString(7, cliente.getBairro());
 		stm.setString(8, cliente.getCidade());
-		stm.setObject(9, cliente.getEstado());
+		stm.setString(9, cliente.getEstado().name());
 		
 		stm.execute();
 		
@@ -89,7 +89,7 @@ public class ClienteDAO {
 		stm.setString(6, cliente.getComplemento());
 		stm.setString(7, cliente.getBairro());
 		stm.setString(8, cliente.getCidade());
-		stm.setString(9, cliente.getEstados());
+		stm.setString(9, cliente.getEstado().name());
 		stm.setLong(10, cliente.getId());
 		
 		stm.execute();

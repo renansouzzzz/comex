@@ -46,4 +46,13 @@ public class ComexWs {
 		
 		return listaCliente;
 	}
+	
+	@WebMethod(operationName="InsereCliente")
+	public Cliente adicionarCliente(Cliente c) throws SQLException {
+		
+		cliente.insereCliente(c);
+		
+		return c;
+		
+	}
 }

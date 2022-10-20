@@ -14,7 +14,6 @@ public class Cliente {
 	private String complemento;
 	private String bairro;
 	private String cidade;
-	private String estados;
 	private Estado estado;
 
 	public Cliente() {
@@ -33,7 +32,7 @@ public class Cliente {
 		this.complemento = complemento;
 		this.bairro = bairro;
 		this.cidade = cidade;
-		this.estado = estado;
+		this.estado = estado.AC;
 		contadorID++;
 		
 		validacaoId();
@@ -54,7 +53,6 @@ public class Cliente {
 		this.complemento = complemento;
 		this.bairro = bairro;
 		this.cidade = cidade;
-		this.estados = estados;
 	}
 	
 	public void validacaoId() {
@@ -177,10 +175,6 @@ public class Cliente {
 		this.cidade = cidade;
 	}
 
-	public void setEstados(String estados) {
-		this.estados = estados;
-	}
-
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
@@ -193,11 +187,7 @@ public class Cliente {
 	public Estado getEstado() {
 		return this.estado;
 	}
-	public String getEstados() {
-		return estados;
 		
-	}
-	
 	@Override
 	public String toString() {
 		return "ID: " + getId() + "\n Nome: " + getNome() + "\n CPF: " + getCpf() +
