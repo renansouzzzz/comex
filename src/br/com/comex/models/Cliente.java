@@ -32,7 +32,7 @@ public class Cliente {
 		this.complemento = complemento;
 		this.bairro = bairro;
 		this.cidade = cidade;
-		this.estado = estado.AC;
+		this.estado = estado;
 		contadorID++;
 		
 		validacaoId();
