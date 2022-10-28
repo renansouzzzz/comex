@@ -5,5 +5,8 @@
  * @author renan.oliveira
  *
  */
-module comex {
-}
+//module comex {
+//	requires java.sql;
+//	requires c3p0;
+//	requires java.base;
+//}

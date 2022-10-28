@@ -1,0 +1,1 @@
+docker build -t renansouzzzz/comex/comexws:1.0 .
