@@ -1,1 +1,1 @@
-docker build -t renansouzzzz/comex/comexws:1.0 .
+docker build -t /comex/comexws:1.0 .
